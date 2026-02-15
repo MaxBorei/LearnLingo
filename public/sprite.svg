@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <symbol id="icon-ukraine" viewBox="0 0 32 32">
+        <path
+            d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16c-8.837 0-16 7.163-16 16s7.163 16 16 16z"></path>
+        <path d="M0 16c0-8.836 7.163-16 16-16s16 7.163 16 16z"></path>
+    </symbol>
+
+    <symbol id="icon-Vector_blue" viewBox="0 0 64 32">
+        <path d="M0 32c0-17.673 14.327-32 32-32s32 14.327 32 32z"></path>
+    </symbol>
+</svg>

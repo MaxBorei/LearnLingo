@@ -27,10 +27,12 @@
   /* Text */
   --color-text-primary: #121417;
   --color-text-secondary: #8a8a89;
+  --color-text-inverse: #fff;
 
   /* Backgrounds */
   --color-bg-page: #fff;
   --color-bg-surface: #f8f8f8;
+  --color-bg-btn-reg: #121417;
 }
 
 :root[data-theme="yellow"] {
