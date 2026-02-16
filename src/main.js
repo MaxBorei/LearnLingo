@@ -1,4 +1,7 @@
 import "./style.css";
+import "./lib/firebase.js";
+import "./components/Modal/modal.js";
+
 import { Header } from "./components/Header/header.js";
 import { Home } from "./components/Home/home.js";
 import { Container } from "./components/Container/container.js";

@@ -8,4 +8,17 @@
     <symbol id="icon-Vector_blue" viewBox="0 0 64 32">
         <path d="M0 32c0-17.673 14.327-32 32-32s32 14.327 32 32z"></path>
     </symbol>
+
+    <symbol id="icon-accent" viewBox="0 0 13 32">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+            stroke-width="3.7647"
+            d="M1.882 1.882h1.882c2.636 0 3.953 0 4.96 0.513 0.885 0.451 1.605 1.171 2.057 2.057 0.513 1.007 0.513 2.324 0.513 4.96v13.176c0 2.635 0 3.953-0.513 4.96-0.451 0.885-1.171 1.605-2.057 2.056-1.007 0.513-2.324 0.513-4.96 0.513h-1.882"></path>
+    </symbol>
+
+    <symbol id="icon-arrow" viewBox="0 0 35 32">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+            stroke-width="5.8182"
+            d="M19.879 2.909l12.121 12.121M32 15.030l-12.121 12.121M32 15.030h-29.091"></path>
+    </symbol>
+
 </svg>

@@ -1,18 +1,25 @@
+.Header {
+  padding: clamp(16px, 1.38vw, 20px) 0;
+}
+
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(4px, 0.55vw, 8px);
 }
+
 .logo__icon {
-  width: 28px;
-  height: 28px;
+  width: clamp(7.29px, 1.944vw, 28px);
+  height: clamp(7.29px, 1.944vw, 28px);
   position: relative;
 }
+
 .logo__icon-svg {
   width: 100%;
   height: 100%;
   fill: #ffda44;
 }
+
 .logo__icon-svg-blue {
   position: absolute;
   top: 0;
@@ -22,29 +29,104 @@
   height: 100%;
   fill: #338af3;
 }
+
 .logo__icon-svg-blue:hover {
-  filter: drop-shadow(0 0 6px rgba(51, 138, 243, 0.55));
-  transition: filter 250ms ease;
+  filter: drop-shadow(0 0 clamp(1.56px, 0.417vw, 6px) rgba(51, 138, 243, 0.55));
+  transition: filter clamp(65.1ms, 17.361vw, 250ms) ease;
 }
+
 .logo__text {
   font-weight: var(--fw-medium);
   font-size: var(--fs-20);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
+
 .header__content_box {
   display: flex;
-  gap: 390px;
+  gap: clamp(101.56px, 27.083vw, 390px);
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: clamp(2.6px, 0.694vw, 10px);
+  padding-bottom: clamp(2.6px, 0.694vw, 10px);
 }
+
 .nav__box {
   display: flex;
-  gap: 28px;
   align-items: center;
 }
+
+.nav {
+  display: flex;
+  gap: clamp(7.29px, 1.944vw, 28px);
+  align-items: center;
+}
+
 .nav__link {
   font-weight: var(--fw-regular);
   line-height: 1.2;
+}
+
+.header_icons {
+  width: clamp(5.21px, 1.389vw, 20px);
+  height: clamp(5.21px, 1.389vw, 20px);
+  display: flex;
+  align-items: center;
+}
+
+.header_icons-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.header_icons-svg.accent {
+  stroke: var(--color-accent);
+  fill: none;
+  width: clamp(1.82px, 0.486vw, 7px);
+  height: clamp(4.43px, 1.181vw, 17px);
+}
+
+.header_icons-svg.arrow {
+  width: clamp(3.12px, 0.833vw, 12px);
+  height: clamp(2.86px, 0.764vw, 11px);
+  stroke: var(--color-accent);
+  fill: none;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__auth {
+  display: flex;
+  align-items: center;
+  gap: clamp(4.17px, 1.111vw, 16px);
+}
+
+.header__auth_btn_login {
+  all: unset;
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: clamp(2.08px, 0.556vw, 8px);
+  cursor: pointer;
+}
+
+.header__auth_btn_login:focus-visible {
+  outline: clamp(0.52px, 0.139vw, 2px) solid currentColor;
+  outline-offset: clamp(0.78px, 0.208vw, 3px);
+}
+
+.header__auth-button {
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+}
+
+.header__auth-button--primary.header__auth-button {
+  border-radius: clamp(3.12px, 0.833vw, 12px);
+  padding: clamp(3.65px, 0.972vw, 14px) clamp(10.16px, 2.708vw, 39px);
+  background: var(--color-bg-btn-reg);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+  color: var(--color-text-inverse);
 }
