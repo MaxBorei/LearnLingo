@@ -2,3 +2,4 @@
 @import "./styles/base.css";
 @import "./components/Header/header.css";
 @import "./components/Container/container.css";
+@import "./components/Modal/modal.css";
