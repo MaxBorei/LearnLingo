@@ -85,7 +85,7 @@
 }
 .modal__close-svg {
   stroke-width: 2.5px;
-  stroke: #121417;
+  stroke: var(--color-text-primary);
   width: 32px;
   height: 32px;
 }

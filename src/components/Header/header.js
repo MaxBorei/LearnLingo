@@ -23,7 +23,7 @@ export const Header = () => {
             </div>
             <div class="header__auth">
                 <div class="header__auth_btn_login">
-                    <button class="header__auth_btn_login" type="button">
+                    <button class="header__auth_btn_login" type="button" data-modal="login">
                         <span class="header_icons" aria-hidden="true">
                             <svg class="header_icons-svg arrow">
                                 <use href="/sprite.svg#icon-arrow"></use>

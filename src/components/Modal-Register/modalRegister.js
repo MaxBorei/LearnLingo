@@ -1,38 +1,7 @@
-document.addEventListener("click", (e) => {
-  const trigger = e.target.closest("[data-modal]");
-  if (!trigger) return;
-
-  const modalName = trigger.dataset.modal;
-  const modal = document.querySelector(`[data-modal-name="${modalName}"]`);
-
-  if (!modal) return;
-
-  openModal(modal);
-});
-
-function openModal(modal) {
-  modal.classList.remove("visually-hidden");
-  const overlay = modal.closest(".overlay");
-  overlay.classList.remove("visually-hidden");
-}
-
-document.addEventListener("click", (e) => {
-  const closeBtn = e.target.closest(".modal__close");
-  if (!closeBtn) return;
-  const modal = closeBtn.closest(".modal");
-  closeModal(modal);
-});
-
-function closeModal(modal) {
-  modal.classList.add("visually-hidden");
-  const overlay = modal.closest(".overlay");
-  overlay.classList.add("visually-hidden");
-}
-
-export const Modal = () => {
+export const modalRegister = () => {
   return `
   <div class="overlay visually-hidden">
-    <div class="modal visually-hidden" data-modal-name="register" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal visually-hidden" data-modal-name="register" role="dialog" aria-modal="true">
        <div class="modal__content_box">
          <h2 class="modal__title">Registration</h2>
          <p class="modal__subtitle">Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information</p>
