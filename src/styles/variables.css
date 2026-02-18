@@ -1,6 +1,6 @@
 :root {
   /* Typography */
-  --font-family: "Roboto", sans-serif;
+  --font-family: 'Roboto', sans-serif;
 
   --fw-regular: 400;
   --fw-medium: 500;
@@ -12,7 +12,9 @@
   --fs-18: clamp(15px, 1.1vw, 18px);
   --fs-20: clamp(16px, 1.3vw, 20px);
   --fs-24: clamp(18px, 1.6vw, 24px);
+  --fs-28: clamp(20px, 1.6vw, 28px);
   --fs-40: clamp(28px, 3vw, 40px);
+  --fs-48: clamp(32px, 3vw, 48px);
   --fs-80: clamp(42px, 6vw, 80px);
 
   /* Motion */
@@ -29,6 +31,7 @@
   --color-text-secondary: rgba(18, 20, 23, 0.8);
   --color-text-muted: #8a8a89;
   --color-text-inverse: #fff;
+  --color-text-error: #ff0000;
 
   /* Backgrounds */
   --color-bg-page: #fff;
@@ -36,27 +39,27 @@
   --color-bg-btn-reg: #121417;
 }
 
-:root[data-theme="yellow"] {
+:root[data-theme='yellow'] {
   --color-accent: #f4c550;
   --color-accent-hover: #fbe9ba;
 }
 
-:root[data-theme="green"] {
+:root[data-theme='green'] {
   --color-accent: #9fbaae;
   --color-accent-hover: #cbded3;
 }
 
-:root[data-theme="blue"] {
+:root[data-theme='blue'] {
   --color-accent: #9fb7ce;
   --color-accent-hover: #bfd6ea;
 }
 
-:root[data-theme="peachRose"] {
+:root[data-theme='peachRose'] {
   --color-accent: #e0a39a;
   --color-accent-hover: #f2c0bd;
 }
 
-:root[data-theme="softPeach"] {
+:root[data-theme='softPeach'] {
   --color-accent: #f0aa8d;
   --color-accent-hover: #f4c8ba;
 }

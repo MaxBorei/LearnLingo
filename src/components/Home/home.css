@@ -1,0 +1,119 @@
+.Home {
+  padding: 0 64px;
+}
+
+.Home__layout {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.Home__content-title {
+  background: var(--color-bg-surface);
+  width: 720px;
+  height: 530px;
+  padding: 98px 108px 98px 64px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.Home__content-image {
+  background: var(--color-accent-hover);
+  width: 568px;
+  height: 530px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.Home__content {
+  display: flex;
+  gap: 24px;
+}
+.Home__footer {
+  border: 1.5px dashed var(--color-accent);
+  border-radius: 30px;
+  padding: 40px 123px;
+}
+.Home__content-title-main {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-48);
+  line-height: 1.37;
+  margin-bottom: 32px;
+}
+.Home__content-title-main-span {
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  background: var(--color-accent-hover);
+  border-radius: 12px;
+}
+.Home__content-title-sub {
+  font-weight: var(--fw-regular);
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+  font-size: var(--fs-16);
+  max-width: 471px;
+}
+.Home__content-title-btn {
+  border-radius: 12px;
+  padding: 16px 88px;
+  width: 267px;
+  height: 60px;
+  background: var(--color-accent);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-18);
+  line-height: 1.56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.Home__btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Home__content-image-face {
+  position: absolute;
+  top: 80px;
+  right: 114px;
+  z-index: 1;
+}
+.Home__content-image-mac {
+  position: absolute;
+  top: 354px;
+  right: 88px;
+  z-index: 2;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.stats__item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.stats__value {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-28);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.stats__label {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-14);
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}

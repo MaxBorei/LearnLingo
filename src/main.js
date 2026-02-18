@@ -16,4 +16,4 @@ app.insertAdjacentHTML('beforeend', Home());
 app.insertAdjacentHTML('beforeend', modalRegister());
 app.insertAdjacentHTML('beforeend', modalLogin());
 
-initHeader('#app');
+initHeader();

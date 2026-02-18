@@ -4,11 +4,14 @@ import { Header } from '../Header/header.js';
 
 export function initHeader(rootSelector = '#app') {
   const root = document.querySelector(rootSelector);
+  if (!root) return;
 
-  const headerRoot = document.createElement('div');
-  headerRoot.id = 'header-root';
-
-  root.prepend(headerRoot);
+  let headerRoot = root.querySelector('#header-root');
+  if (!headerRoot) {
+    headerRoot = document.createElement('div');
+    headerRoot.id = 'header-root';
+    root.prepend(headerRoot);
+  }
 
   onAuthStateChanged(auth, user => {
     headerRoot.innerHTML = Header(user);

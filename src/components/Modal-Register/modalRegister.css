@@ -48,6 +48,9 @@
   gap: 18px;
   width: 100%;
 }
+.modal__form > button[type='submit'] {
+  margin-top: 22px;
+}
 
 .modal__input {
   border: 1px solid rgba(18, 20, 23, 0.1);
@@ -88,4 +91,8 @@
   stroke: var(--color-text-primary);
   width: 32px;
   height: 32px;
+}
+.modal__error {
+  color: var(--color-text-error);
+  line-height: 1.29;
 }
