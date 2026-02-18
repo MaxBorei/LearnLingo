@@ -44,3 +44,21 @@ export function closeModal(modalClose) {
   const overlay = modalClose.closest('.overlay');
   overlay.classList.add('visually-hidden');
 }
+
+document.addEventListener('click', e => {
+  const passwordToggle = e.target.closest('.password-toggle');
+  if (!passwordToggle) return;
+
+  const field = passwordToggle.closest('.password-field');
+  const passwordInput = field.querySelector('input');
+  const iconUse = passwordToggle.querySelector('use');
+
+  const isHidden = passwordInput.type === 'password';
+
+  passwordInput.type = isHidden ? 'text' : 'password';
+
+  iconUse.setAttribute(
+    'href',
+    isHidden ? '/sprite.svg#icon-eye' : '/sprite.svg#icon-eye-off'
+  );
+});
