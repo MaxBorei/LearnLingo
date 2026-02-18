@@ -103,7 +103,7 @@
   gap: clamp(4.17px, 1.111vw, 16px);
 }
 
-.header__auth_btn_login {
+.header__auth__btn__login {
   all: unset;
   display: inline-flex;
   white-space: nowrap;
@@ -112,7 +112,7 @@
   cursor: pointer;
 }
 
-.header__auth_btn_login:focus-visible {
+.header__auth__btn__login:focus-visible {
   outline: clamp(0.52px, 0.139vw, 2px) solid currentColor;
   outline-offset: clamp(0.78px, 0.208vw, 3px);
 }
@@ -122,11 +122,47 @@
   line-height: 1.25;
 }
 
-.header__auth-button--primary.header__auth-button {
+.header__auth__button__primary.header__auth-button {
   border-radius: clamp(3.12px, 0.833vw, 12px);
   padding: clamp(3.65px, 0.972vw, 14px) clamp(10.16px, 2.708vw, 39px);
   background: var(--color-bg-btn-reg);
   font-weight: var(--fw-bold);
   line-height: 1.25;
   color: var(--color-text-inverse);
+}
+.header__auth_user {
+  display: flex;
+  align-items: center;
+  gap: clamp(4.17px, 1.111vw, 16px);
+}
+.header__auth__user__svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-inverse);
+}
+.header__auth__svg__box {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border-radius: 10px;
+}
+.header__auth__content__box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.header__auth__btn__logout {
+  display: flex;
+  border-radius: clamp(3.12px, 0.833vw, 12px);
+  padding: clamp(3.65px, 0.972vw, 14px) clamp(10.16px, 2.708vw, 39px);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+  white-space: nowrap;
+  align-items: center;
+  gap: clamp(2.08px, 0.556vw, 8px);
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
 }

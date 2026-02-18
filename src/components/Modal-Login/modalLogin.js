@@ -11,8 +11,8 @@ export const modalLogin = () => {
            <input type="email" id="login-email" name="email" class="modal__input" required placeholder="Email">
            <label for="login-password" class="modal__label visually-hidden">Password</label>
            <input type="password" id="login-password" name="password" class="modal__input" required placeholder="Password">
+           <button type="submit" data-form-name="login-form" class="modal__submit">Log In</button>
        </form>
-        <button type="submit" form="login-form" class="modal__submit">Log In</button>
         <button class="modal__close" aria-label="Close modal">
           <svg class="modal__close-svg" aria-hidden="true">
             <use href="/sprite.svg#icon-close"></use>

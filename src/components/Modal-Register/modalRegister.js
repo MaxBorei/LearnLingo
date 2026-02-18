@@ -46,7 +46,7 @@ export const modalRegister = () => `
           placeholder="Password"
         />
 
-        <button type="submit" class="modal__submit">Sign Up</button>
+        <button type="submit" class="modal__submit" data-form-name="registration-form">Sign Up</button>
       </form>
 
       <button class="modal__close" aria-label="Close modal">

@@ -1,8 +1,11 @@
 document.addEventListener('click', e => {
   const openTrigger = e.target.closest('[data-modal]');
+
   if (openTrigger) {
     const modalName = openTrigger.dataset.modal;
+
     const modal = document.querySelector(`[data-modal-name="${modalName}"]`);
+
     if (!modal) return;
     openModal(modal);
     return;
@@ -23,16 +26,6 @@ document.addEventListener('click', e => {
   }
 });
 
-document.addEventListener('submit', e => {
-  const form = e.target.closest('.modal__form');
-  if (!form) return;
-  e.preventDefault();
-
-  const modal = form.closest('.modal');
-  if (!modal) return;
-  closeModal(modal);
-});
-
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   const openedModal = document.querySelector('.modal:not(.visually-hidden)');
@@ -40,13 +33,13 @@ document.addEventListener('keydown', e => {
   closeModal(openedModal);
 });
 
-function openModal(modal) {
+export function openModal(modal) {
   modal.classList.remove('visually-hidden');
   const overlay = modal.closest('.overlay');
   if (overlay) overlay.classList.remove('visually-hidden');
 }
 
-function closeModal(modalClose) {
+export function closeModal(modalClose) {
   modalClose.classList.add('visually-hidden');
   const overlay = modalClose.closest('.overlay');
   overlay.classList.add('visually-hidden');
