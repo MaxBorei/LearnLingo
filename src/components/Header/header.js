@@ -64,7 +64,7 @@ const renderAuth = user => {
     <span class="header__auth__user__name">
     ${user.displayName || user.email}</span>
     </div>
-    <button class="header__auth__btn__logout" type="button" data-action="logout-button">
+    <button class="header__auth__btn__logout" type="button" data-action="logout">
         Logout
     </button>
 </div>`;

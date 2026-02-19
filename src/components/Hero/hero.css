@@ -1,15 +1,15 @@
-.Home {
-  padding: 0 64px;
+.Hero {
+  padding: 0 clamp(32px, 4.44vw, 64px);
 }
 
-.Home__layout {
+.Hero__layout {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.Home__content-title {
+.Hero__content-title {
   background: var(--color-bg-surface);
   width: 720px;
   height: 530px;
@@ -18,7 +18,7 @@
   flex-direction: column;
   border-radius: 30px;
 }
-.Home__content-image {
+.Hero__content-image {
   background: var(--color-accent-hover);
   width: 568px;
   height: 530px;
@@ -26,28 +26,29 @@
   position: relative;
   overflow: hidden;
 }
-.Home__content {
+.Hero__content {
   display: flex;
   gap: 24px;
+  justify-content: center;
 }
-.Home__footer {
+.Hero__footer {
   border: 1.5px dashed var(--color-accent);
   border-radius: 30px;
   padding: 40px 123px;
 }
-.Home__content-title-main {
+.Hero__content-title-main {
   font-weight: var(--fw-medium);
   font-size: var(--fs-48);
   line-height: 1.37;
   margin-bottom: 32px;
 }
-.Home__content-title-main-span {
+.Hero__content-title-main-span {
   font-style: italic;
   font-weight: var(--fw-regular);
   background: var(--color-accent-hover);
   border-radius: 12px;
 }
-.Home__content-title-sub {
+.Hero__content-title-sub {
   font-weight: var(--fw-regular);
   line-height: 1.38;
   letter-spacing: -0.02em;
@@ -55,7 +56,7 @@
   font-size: var(--fs-16);
   max-width: 471px;
 }
-.Home__content-title-btn {
+.Hero__content-title-btn {
   border-radius: 12px;
   padding: 16px 88px;
   width: 267px;
@@ -69,21 +70,26 @@
   justify-content: center;
   white-space: nowrap;
 }
-.Home__btn {
+.Hero__btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.Home__content-image-face {
+.Hero__content-title-btn:hover {
+  background: var(--color-accent-hover);
+}
+.Hero__content-image-face {
   position: absolute;
-  top: 80px;
-  right: 114px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
-.Home__content-image-mac {
+.Hero__content-image-mac {
   position: absolute;
-  top: 354px;
-  right: 88px;
+  left: 50%;
+  top: 99%;
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 .stats {
