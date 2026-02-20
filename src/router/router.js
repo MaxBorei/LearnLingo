@@ -1,16 +1,23 @@
-import { Hero } from '../components/Hero/hero.js';
-import { Teachers } from '../components/Teachers/teachers.js';
-
-const notFound = () => '<h1 style="padding:40px">404</h1>';
+import { Hero } from '@/components/Hero/hero.js';
+import { Teachers, initTeachers } from '@/pages/Teachers/teachers.js';
+import { notFound } from '@/pages/Not-found/not-found.js';
 
 export function createRouter(renderView) {
-  function router() {
+  async function router() {
     const path = window.location.pathname;
 
-    if (path === '/') return renderView(Hero());
-    if (path === '/teachers') return renderView(Teachers());
+    if (path === '/') {
+      renderView(Hero());
+      return;
+    }
 
-    return renderView(notFound());
+    if (path === '/teachers') {
+      renderView(Teachers());
+      await initTeachers();
+      return;
+    }
+
+    renderView(notFound());
   }
 
   function initLinkRouting() {

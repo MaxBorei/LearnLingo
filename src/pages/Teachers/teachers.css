@@ -1,0 +1,9 @@
+.Teachers {
+  display: flex;
+}
+
+.Teachers__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

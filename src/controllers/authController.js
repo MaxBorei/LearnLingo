@@ -7,10 +7,10 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
-import { auth } from '../lib/firebase.js';
+import { auth } from '@/lib/firebase.js';
 
 import { closeModal } from './modalController.js';
-import { getAuthErrorMessage } from '../utilites/getAuthErrorMessage.js';
+import { getAuthErrorMessage } from '@/utilites/getAuthErrorMessage.js';
 
 document.addEventListener('submit', async e => {
   if (!(e.target instanceof HTMLFormElement)) return;

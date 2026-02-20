@@ -1,0 +1,29 @@
+.Teachers__item {
+  display: flex;
+  gap: 48px;
+  border-radius: 24px;
+  padding: 24px;
+  width: 1184px;
+  height: 328px;
+}
+.teachers__img__box {
+  border: 2px solid var(--color-border-img);
+  border-radius: 30px;
+  width: 120px;
+  height: 120px;
+  padding: 12px;
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+}
+.teachers__img {
+  border-radius: 15px;
+  width: 96px;
+  height: 96px;
+}
+.Teachers__link {
+}
+.Teachers__img {
+}
+.Teachers__name {
+}
