@@ -3,7 +3,7 @@ export const Header = (user = null) => {
     <div class="container">
         <div class="header__inner">
             <div class="header__content_box">
-                <div class="logo">
+                <a class="logo" href="/" data-link>
                     <div class="logo__icon">
                         <svg class="logo__icon-svg-blue" aria-hidden="true">
                             <use href="/sprite.svg#icon-Vector_blue"></use>
@@ -13,11 +13,11 @@ export const Header = (user = null) => {
                         </svg>
                     </div>
                     <div class="logo__text">LearnLingo</div>
-                </div>
+                </a>
                 <div class="nav__box">
                     <nav class="nav">
-                        <a href="#" class="nav__link">Home</a>
-                        <a href="#" class="nav__link">Teachers</a>
+                        <a href="/" class="nav__link" data-link>Home</a>
+                        <a href="/teachers" class="nav__link" data-link>Teachers</a>
                     </nav>
                 </div>
                 </div>
