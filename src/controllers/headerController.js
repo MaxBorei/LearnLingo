@@ -20,11 +20,9 @@ export function initHeader(rootSelector = '#app') {
 
 export function setActiveNav() {
   const path = window.location.pathname;
-  console.log(path);
 
   const teachersActive = document.querySelector('.onPage_Teachers');
   if (!teachersActive) return;
-  console.log(teachersActive);
 
   if (path === '/teachers') {
     teachersActive.classList.add('active');
