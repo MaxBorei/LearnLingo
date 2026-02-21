@@ -21,12 +21,12 @@ export function initHeader(rootSelector = '#app') {
 export function setActiveNav() {
   const path = window.location.pathname;
 
-  const teachersActive = document.querySelector('.onPage_Teachers');
-  if (!teachersActive) return;
+  const teachersLink = document.querySelector('.onPage_Teachers');
+  if (!teachersLink) return;
 
   if (path === '/teachers') {
-    teachersActive.classList.add('active');
+    teachersLink.classList.add('active');
   } else {
-    teachersActive.classList.remove('active');
+    teachersLink.classList.remove('active');
   }
 }

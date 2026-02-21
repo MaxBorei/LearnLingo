@@ -104,3 +104,25 @@ body.page-teachers {
 .per_hour {
   color: var(--color-text-success);
 }
+.Teacher__characteristics_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.Teacher_All_box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+.Teacher__characteristics_text {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+.Teacher__characteristics_text_span {
+  color: var(--color-text-primary);
+}
+.Teacher__characteristics_text_span.underline {
+  text-decoration: underline;
+}
