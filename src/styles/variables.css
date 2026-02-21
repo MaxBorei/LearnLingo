@@ -6,16 +6,16 @@
   --fw-medium: 500;
   --fw-bold: 700;
 
-  --fs-12: clamp(10px, 0.7vw, 12px);
-  --fs-14: clamp(12px, 0.9vw, 14px);
-  --fs-16: clamp(14px, 1vw, 16px);
-  --fs-18: clamp(15px, 1.1vw, 18px);
-  --fs-20: clamp(16px, 1.3vw, 20px);
-  --fs-24: clamp(18px, 1.6vw, 24px);
-  --fs-28: clamp(20px, 1.6vw, 28px);
-  --fs-40: clamp(28px, 3vw, 40px);
-  --fs-48: clamp(32px, 3vw, 48px);
-  --fs-80: clamp(42px, 6vw, 80px);
+  --fs-12: clamp(10px, 0.83vw, 12px);
+  --fs-14: clamp(12px, 0.97vw, 14px);
+  --fs-16: clamp(14px, 1.11vw, 16px);
+  --fs-18: clamp(15px, 1.25vw, 18px);
+  --fs-20: clamp(16px, 1.39vw, 20px);
+  --fs-24: clamp(18px, 1.67vw, 24px);
+  --fs-28: clamp(20px, 1.94vw, 28px);
+  --fs-40: clamp(28px, 2.78vw, 40px);
+  --fs-48: clamp(32px, 3.33vw, 48px);
+  --fs-80: clamp(42px, 5.56vw, 80px);
 
   /* Motion */
   --transition-fast: 150ms ease;
@@ -32,6 +32,7 @@
   --color-text-muted: #8a8a89;
   --color-text-inverse: #fff;
   --color-text-error: #ff0000;
+  --color-text-success: #38cd3e;
 
   /* Backgrounds */
   --color-bg-page: #fff;

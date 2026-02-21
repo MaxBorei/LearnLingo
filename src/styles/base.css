@@ -122,3 +122,6 @@ h6 {
   white-space: nowrap;
   border: 0;
 }
+body.page-home {
+  background: var(--color-bg-page);
+}

@@ -1,23 +1,27 @@
 import { Hero } from '@/components/Hero/hero.js';
 import { Teachers, initTeachers } from '@/pages/Teachers/teachers.js';
 import { notFound } from '@/pages/Not-found/not-found.js';
+import { setActiveNav } from '../controllers/headerController.js';
 
 export function createRouter(renderView) {
   async function router() {
     const path = window.location.pathname;
 
     if (path === '/') {
+      document.body.className = 'page-home';
       renderView(Hero());
+      setActiveNav();
       return;
-    }
-
-    if (path === '/teachers') {
+    } else if (path === '/teachers') {
+      document.body.className = 'page-teachers';
       renderView(Teachers());
       await initTeachers();
+      setActiveNav();
       return;
+    } else {
+      document.body.className = 'page-not-found';
+      renderView(notFound());
     }
-
-    renderView(notFound());
   }
 
   function initLinkRouting() {

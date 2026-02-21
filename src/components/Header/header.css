@@ -177,3 +177,17 @@
   gap: clamp(2.08px, 0.556vw, 8px);
   border: 1px solid var(--color-accent);
 }
+.nav__link.teachers {
+  position: relative;
+}
+.onPage_Teachers.active {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+}

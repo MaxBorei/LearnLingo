@@ -17,7 +17,9 @@ export const Header = (user = null) => {
                 <div class="nav__box">
                     <nav class="nav">
                         <a href="/" class="nav__link" data-link>Home</a>
-                        <a href="/teachers" class="nav__link" data-link>Teachers</a>
+                        <a href="/teachers" class="nav__link teachers" data-link>Teachers
+                        <span class="onPage_Teachers" aria-hidden="true"></span>
+                        </a>                        
                     </nav>
                 </div>
                 </div>

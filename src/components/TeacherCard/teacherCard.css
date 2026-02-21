@@ -1,3 +1,6 @@
+body.page-teachers {
+  background: var(--color-bg-surface);
+}
 .Teachers__item {
   display: flex;
   gap: 48px;
@@ -5,25 +8,99 @@
   padding: 24px;
   width: 1184px;
   height: 328px;
+  background: var(--color-bg-page);
 }
 .teachers__img__box {
-  border: 2px solid var(--color-border-img);
-  border-radius: 30px;
+  border: 3px solid var(--color-accent-hover);
+  border-radius: 100px;
   width: 120px;
   height: 120px;
-  padding: 12px;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 .teachers__img {
-  border-radius: 15px;
+  border-radius: 100px;
   width: 96px;
   height: 96px;
 }
-.Teachers__link {
+.onlineDot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-text-success);
+  border-radius: 100px;
+  position: absolute;
+  top: 16px;
+  right: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-bg-page);
 }
-.Teachers__img {
+.Teachers__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.Teachers__subtitle {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  color: var(--color-text-muted);
 }
 .Teachers__name {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-24);
+}
+.Teacher__content__box {
+  display: flex;
+}
+.Teacher__about__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.Teachers__about__item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.Teachers__about__svg {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  fill: #ffc531;
+}
+.Teachers__about__item_text {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.Teacher__CTA {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.Teachers__about__svg.book {
+  stroke: var(--color-text-primary);
+  fill: none;
+}
+.Teachers__about__svg.heart {
+  fill: var(--color-text-primary);
+}
+.Teachers__about__svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+.Teachers__about__box {
+  display: flex;
+  justify-content: space-between;
+}
+.per_hour {
+  color: var(--color-text-success);
 }
