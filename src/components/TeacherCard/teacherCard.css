@@ -89,13 +89,15 @@ body.page-teachers {
 }
 .Teachers__about__svg.heart {
   fill: var(--color-text-primary);
+  width: 26px;
+  height: 26px;
 }
 .Teachers__about__svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 16px;
+  height: 16px;
 }
 .Teachers__about__box {
   display: flex;

@@ -53,7 +53,7 @@ export function TeacherCard(t) {
                         <li class="Teachers__about__item">
                         </li>
                         </ul>
-                        <button class="Teachers__about__svg">
+                        <button class="Teachers__about__svg heart">
                         <svg class="Teachers__about__svg heart">
                             <use href="/sprite.svg#icon-heart"></use>
                         </svg>
@@ -62,7 +62,7 @@ export function TeacherCard(t) {
             </div>
             <ul class="Teacher__characteristics_list">
             <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Speaks: <span class="Teacher__characteristics_text_span underline">
-            ${languages.map(lang => lang).join(', ')}
+            ${languages.join(', ')}
             </span></p></li>
             <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Lesson Info: <span class="Teacher__characteristics_text_span">
             ${t.lesson_info}

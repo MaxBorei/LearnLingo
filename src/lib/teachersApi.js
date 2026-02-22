@@ -7,6 +7,7 @@ export default async function getTeachers() {
   try {
     const { data } = await axios.get('/.json');
     const arr = Object.values(data || []);
+
     return arr.map(p => ({
       ...p,
       id: makeIdFromName(p.name),
