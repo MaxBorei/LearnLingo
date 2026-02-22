@@ -23,3 +23,6 @@
   font-size: var(--fs-18);
   line-height: 1.56;
 }
+.Teacher__filter__box {
+  margin-bottom: 32px;
+}

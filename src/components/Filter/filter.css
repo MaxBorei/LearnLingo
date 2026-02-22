@@ -1,0 +1,24 @@
+.filter__list {
+  display: flex;
+  gap: 20px;
+}
+.filter__list__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter__list__label {
+  font-weight: var(--fw-medium);
+  font-style: var(--fs-14);
+  line-height: 1.29;
+  color: var(--color-text-muted);
+}
+.filter__list__select {
+  border-radius: 14px;
+  padding: 14px 14px 14px 18px;
+  width: 221px;
+  height: 48px;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-18);
+  line-height: 1.11;
+}

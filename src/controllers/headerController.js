@@ -15,6 +15,7 @@ export function initHeader(rootSelector = '#app') {
 
   onAuthStateChanged(auth, user => {
     headerRoot.innerHTML = Header(user);
+    setActiveNav();
   });
 }
 

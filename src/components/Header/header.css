@@ -180,8 +180,8 @@
 .nav__link.teachers {
   position: relative;
 }
-.onPage_Teachers.active {
-  content: '';
+.onPage_Teachers {
+  display: none;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -190,4 +190,7 @@
   height: 8px;
   border-radius: 9999px;
   background: var(--color-accent);
+}
+.onPage_Teachers.active {
+  display: block;
 }

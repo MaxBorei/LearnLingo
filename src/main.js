@@ -25,6 +25,7 @@ function renderView(html) {
 }
 
 app.innerHTML = Layout();
+
 initHeader();
 
 const { router, initLinkRouting, initPopstate } = createRouter(renderView);
