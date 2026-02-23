@@ -60,17 +60,50 @@ export function TeacherCard(t) {
                         </button>
                 </div>
             </div>
-            <ul class="Teacher__characteristics_list">
-            <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Speaks: <span class="Teacher__characteristics_text_span underline">
-            ${languages.join(', ')}
-            </span></p></li>
-            <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Lesson Info: <span class="Teacher__characteristics_text_span">
-            ${t.lesson_info}
-            </span></p></li>
-            <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Conditions: <span class="Teacher__characteristics_text_span">
-            ${t.conditions}
-            </span></p></li>
-            </ul>
+            <div class="Teacher_list_btn_box">
+                <ul class="Teacher__characteristics_list">
+                <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Speaks: <span class="Teacher__characteristics_text_span underline">
+                ${languages.join(', ')}
+                </span></p></li>
+                <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Lesson Info: <span class="Teacher__characteristics_text_span">
+                ${t.lesson_info}
+                </span></p></li>
+                <li class="Teacher__characteristics_item"><p class="Teacher__characteristics_text">Conditions: <span class="Teacher__characteristics_text_span">
+                ${conditions.join(' ')}
+                </span></p></li>
+                </ul>
+                <div class="Teacher_rewies_dropdown">
+                    <p class="Teacher_rewies_dropdown_text">${t.experience}</p>
+                    <ul class="Teacher_rewies_list">
+                    ${reviews
+                      .map(
+                        item => `<li class="Teacher_rewies_item">
+                        <div class="Teacher_rewies_box">
+                            <div class="Teacher_rewies_item_avatar">${item.reviewer_name[0]}</div>
+                            <div class="Teacher_rewies_item_name_rating_box">
+                            <h5 class="Teacher_rewies_item_name">${item.reviewer_name}</h5>
+                            <div class="Teacher_rewies_item_rating_box">
+                                <svg class="Teachers__about__svg">
+                                    <use href="/sprite.svg#icon-Star"></use>
+                                </svg>
+                                <p class="Teacher_rewies_item_rating_text">${item.reviewer_rating.toFixed(1)}</p>
+                            </div>
+                        </div>
+                        </div>
+                        <p class="Teacher_rewies_item_comment">${item.comment}</p>
+                        </li>`
+                      )
+                      .join('')}
+                    </ul>
+                </div>            
+                <div class="Teacher_read_more_box">
+                <button class="Teacher_read_more_btn" type="button" name="button_read_more">Read more            
+                </button>
+                </div>
+            </div>                  
+            <ul class="Teacher_pills__list">
+            ${levels.map(item => `<li class="Teacher_pills_item">#${item}</li>`).join('')}
+            </ul>            
         </div>
     </div>
 </li>

@@ -24,9 +24,9 @@ export async function initTeachers() {
   if (!list) return;
 
   const teachers = await getTeachers();
-  let counter = 3;
+  let counter = 4;
   btn.addEventListener('click', e => {
-    counter += 3;
+    counter += 4;
     if (counter >= teachers.length) {
       btn.classList.add('visually-hidden');
     }

@@ -6,8 +6,8 @@ body.page-teachers {
   gap: 48px;
   border-radius: 24px;
   padding: 24px;
-  width: 1184px;
-  height: 328px;
+  width: 100%;
+  height: auto;
   background: var(--color-bg-page);
 }
 .teachers__img__box {
@@ -127,4 +127,96 @@ body.page-teachers {
 }
 .Teacher__characteristics_text_span.underline {
   text-decoration: underline;
+}
+.Teacher_list_btn_box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.Teacher_read_more_btn {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.Teacher_pills__list {
+  display: flex;
+  gap: 8px;
+}
+.Teacher_pills_item {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+  width: auto;
+  height: 32px;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-14);
+  line-height: 1.14;
+}
+.Teacher_pills__list > :first-child {
+  background: var(--color-accent);
+  border: none;
+}
+.Teacher_rewies_dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.Teacher_rewies_list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.Teacher_rewies_box {
+  display: flex;
+  gap: 12px;
+}
+.Teacher_rewies_dropdown_text {
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+.Teacher_rewies_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.Teacher_rewies_item_avatar {
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Teacher_rewies_item_avatar {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-18);
+  color: var(--color-text-success);
+}
+.Teacher_rewies_item_rating_box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.Teacher_rewies_item_name_rating_box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.Teacher_rewies_item_name {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+.Teacher_rewies_item_rating_text {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-14);
+  line-height: 1.29;
+}
+.Teacher_rewies_item_comment {
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
 }
