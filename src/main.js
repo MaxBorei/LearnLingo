@@ -1,6 +1,7 @@
 import '@/style.css';
 import '@/controllers/modalController.js';
 import '@/controllers/authController.js';
+import '@/controllers/teacherCardController.js';
 
 import { modalRegister } from './components/Modal-Register/modalRegister.js';
 import { modalLogin } from './components/Modal-Login/modalLogin.js';

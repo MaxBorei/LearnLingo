@@ -72,7 +72,7 @@ export function TeacherCard(t) {
                 ${conditions.join(' ')}
                 </span></p></li>
                 </ul>
-                <div class="Teacher_rewies_dropdown">
+                <div class="Teacher_rewies_dropdown hidden">
                     <p class="Teacher_rewies_dropdown_text">${t.experience}</p>
                     <ul class="Teacher_rewies_list">
                     ${reviews
@@ -104,6 +104,7 @@ export function TeacherCard(t) {
             <ul class="Teacher_pills__list">
             ${levels.map(item => `<li class="Teacher_pills_item">#${item}</li>`).join('')}
             </ul>            
+            <button  class="Teacher_btn_submit_form btn hidden" type="submit" name="button_submit_form">Book trial lesson</button>
         </div>
     </div>
 </li>

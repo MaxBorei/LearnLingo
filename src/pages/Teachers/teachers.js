@@ -8,7 +8,7 @@ export const Teachers = () => `
       <div class="Teacher__filter__box"></div>
       <div class="Teachers__counter_box">
         <ul class="Teachers__list"></ul>
-        <button class="btn__load__more" name="load_more_button" type="button">Load more</button>
+        <button class="btn__load__more btn" name="load_more_button" type="button">Load more</button>
       </div>
     </div>
   </div>

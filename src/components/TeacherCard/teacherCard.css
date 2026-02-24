@@ -116,6 +116,7 @@ body.page-teachers {
   flex-direction: column;
   gap: 32px;
   width: 100%;
+  align-items: flex-start;
 }
 .Teacher__characteristics_text {
   font-weight: var(--fw-medium);
@@ -219,4 +220,10 @@ body.page-teachers {
 .Teacher_rewies_item_comment {
   font-weight: var(--fw-medium);
   line-height: 1.5;
+}
+.Teacher_btn_submit_form.btn {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
 }
