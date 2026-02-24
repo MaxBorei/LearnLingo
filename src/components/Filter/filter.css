@@ -8,7 +8,6 @@
   gap: 8px;
 }
 .filter__list__label {
-  font-weight: var(--fw-medium);
   font-style: var(--fs-14);
   line-height: 1.29;
   color: var(--color-text-muted);
@@ -18,7 +17,6 @@
   padding: 14px 14px 14px 18px;
   width: 221px;
   height: 48px;
-  font-weight: var(--fw-medium);
   font-size: var(--fs-18);
   line-height: 1.11;
 }

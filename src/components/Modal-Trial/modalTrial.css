@@ -1,0 +1,22 @@
+.teacher_modal_trial_avatar {
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+}
+.Teacher_rewies_item_subtitle {
+  font-size: var(--fs-12);
+  line-height: 1.33;
+  color: var(--color-text-muted);
+}
+.Teacher_rewies_item_name {
+  line-height: 1.5;
+}
+.Teacher_rewies_item_name_box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.trial-title-box {
+  display: flex;
+  gap: 14px;
+}

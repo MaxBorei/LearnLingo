@@ -32,7 +32,6 @@
   gap: 20px;
 }
 .modal__title {
-  font-weight: var(--fw-medium);
   font-size: var(--fs-40);
   line-height: 1.2;
   letter-spacing: -0.02em;

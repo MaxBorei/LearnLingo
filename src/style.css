@@ -8,6 +8,7 @@
 @import './components/Hero/hero.css';
 @import './components/TeacherCard/teacherCard.css';
 @import './components/Filter/filter.css';
+@import './components/Modal-Trial/modalTrial.css';
 
 @import './pages/Not-found/not-found.css';
 @import './pages/Teachers/teachers.css';

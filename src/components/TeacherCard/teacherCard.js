@@ -17,8 +17,8 @@ export function TeacherCard(t) {
 
   return `
     <li >
-    <div class="Teachers__item">
-        <div class="teachers__img__box" data-id="${t.id}">
+    <div class="Teachers__item" data-id='${t.id}'">
+        <div class="teachers__img__box" >
             <span class="onlineDot" aria-hidden="true"></span>
             <img loading="lazy" src="${t.avatar_url ?? '—'}" alt="avatar of teacher ${(t.name, t.surname)}.filter(Boolean).join(' ')" class="teachers__img">
         </div>
@@ -33,7 +33,7 @@ export function TeacherCard(t) {
                 <div class="Teachers__about__box">
                     <ul class="Teacher__about__list">
                         <li class="Teachers__about__item">
-                            <svg class="Teachers__about__svg book">
+                            <svg class="Teachers__about__svg book"> 
                                 <use href="/sprite.svg#icon-book"></use>
                             </svg>
                             <p class="Teachers__about__item_text">Lessons online</p>
@@ -104,7 +104,7 @@ export function TeacherCard(t) {
             <ul class="Teacher_pills__list">
             ${levels.map(item => `<li class="Teacher_pills_item">#${item}</li>`).join('')}
             </ul>            
-            <button  class="Teacher_btn_submit_form btn hidden" type="submit" name="button_submit_form">Book trial lesson</button>
+            <button data-modal="trial" class="Teacher_btn_submit_form btn hidden" type="submit" name="button_submit_form">Book trial lesson</button>
         </div>
     </div>
 </li>

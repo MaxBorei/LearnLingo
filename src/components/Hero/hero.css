@@ -37,7 +37,6 @@
   padding: 40px 123px;
 }
 .Hero__content-title-main {
-  font-weight: var(--fw-medium);
   font-size: var(--fs-48);
   line-height: 1.37;
   margin-bottom: 32px;
@@ -105,7 +104,6 @@
   justify-content: center;
 }
 .stats__value {
-  font-weight: var(--fw-medium);
   font-size: var(--fs-28);
   line-height: 1.14;
   letter-spacing: -0.02em;

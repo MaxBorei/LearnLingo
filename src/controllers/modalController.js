@@ -1,11 +1,36 @@
+import { getTeachers } from '../store/teachersStore.js';
+import { modalTrial } from '@/components/Modal-Trial/modalTrial.js';
+
 document.addEventListener('click', e => {
   const openTrigger = e.target.closest('[data-modal]');
-
   if (openTrigger) {
     const modalName = openTrigger.dataset.modal;
 
-    const modal = document.querySelector(`[data-modal-name="${modalName}"]`);
+    if (modalName !== 'trial') {
+      const modal = document.querySelector(`[data-modal-name="${modalName}"]`);
+      if (!modal) return;
+      openModal(modal);
+      return;
+    }
 
+    const card = openTrigger.closest('.Teachers__item');
+    if (!card) return;
+
+    const id = card.dataset.id;
+    if (!id) return;
+
+    const teachers = getTeachers();
+    const teacher = teachers.find(t => t.id === id);
+    if (!teacher) return;
+
+    document
+      .querySelector('[data-modal-name="trial"]')
+      ?.closest('.overlay')
+      ?.remove();
+
+    document.body.insertAdjacentHTML('beforeend', modalTrial(teacher));
+
+    const modal = document.querySelector('[data-modal-name="trial"]');
     if (!modal) return;
     openModal(modal);
     return;
@@ -18,14 +43,12 @@ document.addEventListener('click', e => {
     closeModal(modalClose);
   }
 
-  const overlayClose = e.target.classList.contains('overlay');
-  if (overlayClose) {
+  if (e.target.classList.contains('overlay')) {
     const modalClose = e.target.querySelector('.modal');
     if (!modalClose) return;
     closeModal(modalClose);
   }
 });
-
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   const openedModal = document.querySelector('.modal:not(.visually-hidden)');

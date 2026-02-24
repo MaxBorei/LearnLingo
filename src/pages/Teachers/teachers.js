@@ -1,6 +1,7 @@
 import getTeachers from '@/lib/teachersApi.js';
 import { TeacherCard } from '@/components/TeacherCard/teacherCard.js';
 import { Filter } from '../../components/Filter/filter.js';
+import { setTeachers } from '../../store/teachersStore.js';
 
 export const Teachers = () => `
   <div class="Teachers">
@@ -24,6 +25,7 @@ export async function initTeachers() {
   if (!list) return;
 
   const teachers = await getTeachers();
+  setTeachers(teachers);
   let counter = 4;
   btn.addEventListener('click', e => {
     counter += 4;
