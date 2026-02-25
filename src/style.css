@@ -1,6 +1,7 @@
 @import './styles/variables.css';
 @import './styles/fonts.css';
 @import './styles/base.css';
+@import './styles/toastify.min.css';
 
 @import './components/Header/header.css';
 @import './components/Container/container.css';

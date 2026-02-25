@@ -20,3 +20,82 @@
   display: flex;
   gap: 14px;
 }
+.modal__form.trial {
+  gap: 40px;
+}
+.modal_trial_form_radio_box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.trial_radio_btn_box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal_trial_form_radio_title {
+  font-size: var(--fs-24);
+  line-height: 1.33;
+}
+.trial-radio-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.trial-radio-input {
+  font-weight: var(--fw-regular);
+  line-height: 1.38;
+  text-align: center;
+
+  appearance: none;
+  position: absolute;
+  opacity: 0;
+}
+.radio-custom {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.trial-radio-input:checked + .radio-custom::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.trial_modal_input_box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+.trial_modal {
+  position: relative;
+}
+.modal.trial {
+  overflow: auto;
+  scrollbar-width: none;
+  height: 972px;
+  overflow-y: auto;
+}
+.modal__form.trial > button[type='submit'] {
+  margin-top: 0px;
+}
+.custom-toast {
+  background: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent)
+  );
+  color: var(--color-text-primary);
+}

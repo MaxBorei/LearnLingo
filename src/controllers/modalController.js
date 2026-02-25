@@ -1,5 +1,6 @@
 import { getTeachers } from '../store/teachersStore.js';
 import { modalTrial } from '@/components/Modal-Trial/modalTrial.js';
+import Toastify from 'toastify-js';
 
 document.addEventListener('click', e => {
   const openTrigger = e.target.closest('[data-modal]');
@@ -57,15 +58,25 @@ document.addEventListener('keydown', e => {
 });
 
 export function openModal(modal) {
-  modal.classList.remove('visually-hidden');
   const overlay = modal.closest('.overlay');
+
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.paddingRight = `${scrollbarWidth}px`;
+  document.body.style.overflow = 'hidden';
+
   if (overlay) overlay.classList.remove('visually-hidden');
+  modal.classList.remove('visually-hidden');
 }
 
-export function closeModal(modalClose) {
-  modalClose.classList.add('visually-hidden');
-  const overlay = modalClose.closest('.overlay');
-  overlay.classList.add('visually-hidden');
+export function closeModal(modal) {
+  const overlay = modal.closest('.overlay');
+
+  modal.classList.add('visually-hidden');
+  if (overlay) overlay.classList.add('visually-hidden');
+
+  document.body.style.overflow = '';
+  document.body.style.paddingRight = '';
 }
 
 document.addEventListener('click', e => {
@@ -84,4 +95,22 @@ document.addEventListener('click', e => {
     'href',
     isHidden ? '/sprite.svg#icon-eye' : '/sprite.svg#icon-eye-off'
   );
+});
+
+document.addEventListener('submit', e => {
+  if (!e.target.matches('#trial-form')) return;
+  e.preventDefault();
+
+  const modal = e.target.closest('.modal');
+  if (modal) closeModal(modal);
+
+  Toastify({
+    text: 'We have received your message and will get in touch with you shortly.',
+    duration: 3000,
+    close: true,
+    gravity: 'top',
+    position: 'right',
+    stopOnFocus: true,
+    className: 'custom-toast',
+  }).showToast();
 });
