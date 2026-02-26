@@ -3,8 +3,8 @@ export const Filter = () => {
     <div class='filter'>
         <form action="filter_list_teachers" class="filter__list">
         <p class="filter__list__text">
-            <label class="filter__list__label">Languages</label>
-            <select class="filter__list__select" name="Languages">
+            <label for="language" class="filter__list__label">Languages</label>
+            <select id="language" class="filter__list__select" name="Languages">
                 <option value="French">French</option>
                 <option value="English">English</option>
                 <option value="German">German</option>
@@ -16,8 +16,8 @@ export const Filter = () => {
             </select>
         </p>
         <p class="filter__list__text"> 
-            <label class="filter__list__label">Level of knowledge</label>
-            <select name="Level" class="filter__list__select">
+            <label for="Level" class="filter__list__label">Level of knowledge</label>
+            <select id="Level" name="Level" class="filter__list__select">
                 <option value="A1 Beginner">A1 Beginner</option>
                 <option value="A2 Elementary">A2 Elementary</option>
                 <option value="B1 Intermediate">B1 Intermediate</option>
@@ -25,8 +25,8 @@ export const Filter = () => {
             </select>
         </p>
         <p class="filter__list__text" >
-            <label class="filter__list__label">Price</label>
-            <select name="Price" class="filter__list__select">
+            <label for="Price" class="filter__list__label">Price</label>
+            <select id="Price" name="Price" class="filter__list__select">
                 <option value="25">25 $</option>
                 <option value="27">27 $</option>
                 <option value="28">28 $</option>

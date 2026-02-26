@@ -53,7 +53,7 @@ export function TeacherCard(t) {
                         <li class="Teachers__about__item">
                         </li>
                         </ul>
-                        <button class="Teachers__about__svg heart">
+                        <button aria-label="toggle favorite"> class="Teachers__about__svg heart">
                         <svg class="Teachers__about__svg heart">
                             <use href="/sprite.svg#icon-heart"></use>
                         </svg>

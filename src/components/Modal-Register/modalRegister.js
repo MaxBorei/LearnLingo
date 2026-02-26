@@ -18,7 +18,7 @@ export const modalRegister = () => `
              <div class="password-field field">
                  <label for="register-password" class="modal__label visually-hidden">Password</label>
                  <input type="password" id="register-password" name="password" class="modal__input" required placeholder="Password" />
-                 <button type="button" class="password-toggle">
+                 <button aria-label="password visibility toggle" type="button" class="password-toggle">
                      <svg class="icon-eye">
                          <use href="/sprite.svg#icon-eye-off"></use>
                      </svg>
