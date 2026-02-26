@@ -1,7 +1,7 @@
 import getTeachers from '@/lib/teachersApi.js';
 import { TeacherCard } from '@/components/TeacherCard/teacherCard.js';
 import { Filter } from '../../components/Filter/filter.js';
-import { setTeachers } from '../../store/teachersStore.js';
+import { setTeachers, getTeachersStore } from '../../store/teachersStore.js';
 
 export const Teachers = () => `
   <div class="Teachers">
@@ -15,38 +15,85 @@ export const Teachers = () => `
   </div>
 `;
 
+const renderFilter = () => {
+  const listFilter = document.querySelector('.Teacher__filter__box');
+  if (!listFilter) return;
+  listFilter.innerHTML = Filter();
+};
+
+const mapKeys = {
+  Languages: 'languages',
+  Level: 'levels',
+  Price: 'price_per_hour',
+};
+
 export async function initTeachers() {
   const list = document.querySelector('.Teachers__list');
   const btn = document.querySelector('.btn__load__more');
 
   renderFilter();
 
-  if (!btn) return;
-  if (!list) return;
+  if (!btn || !list) return;
 
   const teachers = await getTeachers();
   setTeachers(teachers);
+
+  const allTeachers = getTeachersStore();
+
+  const form = document.querySelector('.filter__list');
+  let filterState = {};
+  let filteredTeachers = allTeachers;
   let counter = 4;
-  btn.addEventListener('click', e => {
-    counter += 4;
-    if (counter >= teachers.length) {
+
+  const updateButton = () => {
+    if (counter >= filteredTeachers.length)
       btn.classList.add('visually-hidden');
-    }
-    renderTeachers(counter, teachers, list);
+    else btn.classList.remove('visually-hidden');
+  };
+
+  const applyFilters = () => {
+    filteredTeachers = allTeachers.filter(teacher =>
+      Object.entries(filterState).every(([key, value]) => {
+        const teacherKey = mapKeys[key];
+        const teacherValue = teacher[teacherKey];
+
+        if (Array.isArray(teacherValue)) return teacherValue.includes(value);
+        if (typeof teacherValue === 'number')
+          return teacherValue === Number(value);
+        if (teacherValue && typeof teacherValue === 'object')
+          return Object.values(teacherValue).includes(value);
+
+        return teacherValue === value;
+      })
+    );
+  };
+
+  if (form) {
+    form.addEventListener('change', e => {
+      if (!e.target.classList.contains('filter__list__select')) return;
+
+      const key = e.target.name;
+      const value = e.target.value;
+      filterState[key] = value;
+
+      applyFilters();
+      counter = 4;
+      renderTeachers(counter, filteredTeachers, list);
+      updateButton();
+    });
+  }
+
+  btn.addEventListener('click', () => {
+    counter += 4;
+    renderTeachers(counter, filteredTeachers, list);
+    updateButton();
   });
 
-  renderTeachers(counter, teachers, list);
+  renderTeachers(counter, filteredTeachers, list);
+  updateButton();
 }
 
-function renderTeachers(counter, teachers, list) {
-  const arrSlice = teachers.slice(0, counter);
-
+function renderTeachers(counter, filteredTeachers, list) {
+  const arrSlice = filteredTeachers.slice(0, counter);
   list.innerHTML = arrSlice.map(TeacherCard).join('');
 }
-
-const renderFilter = () => {
-  const listFilter = document.querySelector('.Teacher__filter__box');
-  if (!listFilter) return;
-  const filter = Filter();
-  listFilter.innerHTML = filter;
-};

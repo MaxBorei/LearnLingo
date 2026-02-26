@@ -1,4 +1,4 @@
-import { getTeachers } from '../store/teachersStore.js';
+import { getTeachersStore } from '../store/teachersStore.js';
 import { modalTrial } from '@/components/Modal-Trial/modalTrial.js';
 import Toastify from 'toastify-js';
 
@@ -20,7 +20,7 @@ document.addEventListener('click', e => {
     const id = card.dataset.id;
     if (!id) return;
 
-    const teachers = getTeachers();
+    const teachers = getTeachersStore();
     const teacher = teachers.find(t => t.id === id);
     if (!teacher) return;
 

@@ -4,4 +4,4 @@ export const setTeachers = newTeachers => {
   teachers = newTeachers;
 };
 
-export const getTeachers = () => teachers;
+export const getTeachersStore = () => teachers;

@@ -8,8 +8,11 @@ export const Filter = () => {
                 <option value="French">French</option>
                 <option value="English">English</option>
                 <option value="German">German</option>
-                <option value="Ukrainian">Ukrainian</option>
-                <option value="Polish">Polish</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Italian">Italian</option>
+                <option value="Mandarin Chinese">Mandarin Chinese</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Korean">Korean</option>
             </select>
         </p>
         <p class="filter__list__text"> 
@@ -24,10 +27,12 @@ export const Filter = () => {
         <p class="filter__list__text" >
             <label class="filter__list__label">Price</label>
             <select name="Price" class="filter__list__select">
-                <option value="10">10 $</option>
-                <option value="20">20 $</option>
+                <option value="25">25 $</option>
+                <option value="27">27 $</option>
+                <option value="28">28 $</option>
                 <option value="30">30 $</option>
-                <option value="40">40 $</option>
+                <option value="32">32 $</option>
+                <option value="35">35 $</option>
             </select>
         </p>
         </form>

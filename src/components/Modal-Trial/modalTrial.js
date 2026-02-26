@@ -79,7 +79,7 @@ export const modalTrial = t => {
           <input type="email" id="trial-email" name="email" class="modal__input" required placeholder="Email" />
 
           <label for="phone" class="modal__label visually-hidden">Phone</label>
-          <input type="text" id="phone" name="phone" class="modal__input" required placeholder="Phone" />
+          <input type="text" id="phone" name="phone" class="modal__input" required placeholder="Phone number" />
         </div>
 
         <button type="submit" id="trial_submit" class="modal__submit trial">Book</button>
