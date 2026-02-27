@@ -2,6 +2,7 @@ import getTeachers from '@/lib/teachersApi.js';
 import { TeacherCard } from '@/components/TeacherCard/teacherCard.js';
 import { Filter } from '../../components/Filter/filter.js';
 import { setTeachers, getTeachersStore } from '../../store/teachersStore.js';
+import { initCustomSelect } from '../../controllers/initCustomSelect.js';
 
 export const Teachers = () => `
   <div class="Teachers">
@@ -34,6 +35,7 @@ export async function initTeachers() {
   renderFilter();
 
   if (!btn || !list) return;
+  initCustomSelect();
 
   const teachers = await getTeachers();
   setTeachers(teachers);

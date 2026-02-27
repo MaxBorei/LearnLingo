@@ -6,7 +6,6 @@ import '@/store/teachersStore.js';
 
 import { modalRegister } from './components/Modal-Register/modalRegister.js';
 import { modalLogin } from './components/Modal-Login/modalLogin.js';
-import { modalTrial } from './components/Modal-Trial/modalTrial.js';
 import { initHeader } from './controllers/headerController.js';
 
 import { createRouter } from './router/router.js';
