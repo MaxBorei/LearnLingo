@@ -26,13 +26,6 @@ export const initCustomSelect = () => {
   );
   ulRender[0].innerHTML = '';
 
-  //   for (let i = 0; i < option.length; i++) {
-  //     ulRender[0].insertAdjacentHTML(
-  //       'beforeend',
-  //       `<li class="custom_options" value="${option[i].value}">${option[i].text}</li>`
-  //     );
-  //   }
-
   for (let i = 0; i < arrSelect.length; i++) {
     for (let j = 0; j < arrSelect[i].options.length; j++) {
       ulRender[i].insertAdjacentHTML(
@@ -57,10 +50,12 @@ export const initCustomSelect = () => {
       return;
     });
   });
-};
 
-// const closeSelect = document
-//         .querySelectorAll('.custom-select_options')
-//         .map(e => e.classList.contains('is-open').classList.remove('is-open'));
-//     });
-// const selectOpen = [...allSelects].map(e => e.classList.remove('is-open'));
+  document.addEventListener('click', event => {
+    if (event.target.closest('.custom-select')) {
+      return;
+    }
+    const ulAddOpen = document.querySelectorAll('.custom-select_options');
+    [...ulAddOpen].forEach(e => e.classList.remove('is-open'));
+  });
+};
