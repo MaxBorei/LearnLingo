@@ -62,10 +62,6 @@ document.addEventListener('submit', async e => {
   }
 });
 
-onAuthStateChanged(auth, user => {
-  console.log(user ? `✅ logged in: ${user.email}` : '❌ logged out');
-});
-
 document.addEventListener('click', async e => {
   const btn = e.target.closest('[data-action="logout"]');
   if (!btn) return;

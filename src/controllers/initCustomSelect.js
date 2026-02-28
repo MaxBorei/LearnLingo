@@ -2,7 +2,6 @@ export const initCustomSelect = () => {
   const select = document.querySelectorAll('.filter__list__select');
 
   const arrSelect = [...select];
-  console.log(arrSelect);
 
   const selectFather = arrSelect.map(i => i.closest('.filter__list__text'));
 
@@ -42,4 +41,26 @@ export const initCustomSelect = () => {
       );
     }
   }
+
+  btnSelect.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const fatherBox = e.currentTarget.closest('.custom-select');
+      if (!fatherBox) return;
+      const ulAdd = fatherBox.querySelector('.custom-select_options');
+      const allSelects = document.querySelectorAll('.custom-select_options');
+      if (!ulAdd.classList.contains('is-open')) {
+        allSelects.forEach(e => e.classList.remove('is-open'));
+        ulAdd.classList.add('is-open');
+        return;
+      }
+      ulAdd.classList.remove('is-open');
+      return;
+    });
+  });
 };
+
+// const closeSelect = document
+//         .querySelectorAll('.custom-select_options')
+//         .map(e => e.classList.contains('is-open').classList.remove('is-open'));
+//     });
+// const selectOpen = [...allSelects].map(e => e.classList.remove('is-open'));

@@ -1,6 +1,4 @@
 export function getAuthErrorMessage(err) {
-  console.log(err);
-
   switch (err.code) {
     case 'auth/email-already-in-use':
       return 'This email is already in use. Please use a different email.';

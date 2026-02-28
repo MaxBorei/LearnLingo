@@ -1,11 +1,14 @@
 .filter__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 221px 198px 124px;
+  align-items: start;
   gap: 20px;
 }
 .filter__list__text {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 .filter__list__label_custom {
   font-style: var(--fs-14);
@@ -27,18 +30,19 @@
   flex-direction: column;
   gap: 8px;
   position: relative;
+  width: 100%;
 }
 .custom-select_trigger {
   border-radius: 14px;
   padding: 14px 44px 14px 18px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   font-size: var(--fs-18);
   line-height: 1.11;
   background: var(--color-bg-page);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
 }
 .custom-select_trigger_svg {
@@ -69,14 +73,20 @@
   padding: 14px 18px;
   position: absolute;
   top: 80px;
-
+  width: 100%;
   z-index: 50;
+  display: none;
+}
+.custom-select_options.is-open {
+  display: flex;
 }
 .custom_options {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 111%;
-  color: rgba(18, 20, 23, 0.2);
-  display: none;
+  font-size: var(--fs-18);
+  line-height: 1.11;
+  color: var(--color-text-muted);
+  width: 100%; /* вместо fit-content */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }

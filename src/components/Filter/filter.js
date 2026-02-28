@@ -37,7 +37,7 @@ export const Filter = () => {
             </select>
 
             <div class="custom-select">
-                <label for="Level" class="filter__list__label_custom">Level</label>
+                <label for="Level" class="filter__list__label_custom">Level of knowledge</label>
                 <div class="custom-select_trigger">A1 Beginner
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
