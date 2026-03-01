@@ -17,7 +17,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="language" class="filter__list__label_custom ">Languages</label>
-                <div class="custom-select_trigger">English
+                <div class="custom-select_trigger"><span class="custom-select_value">English</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -38,7 +38,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="Level" class="filter__list__label_custom">Level of knowledge</label>
-                <div class="custom-select_trigger">A1 Beginner
+                <div class="custom-select_trigger"><span class="custom-select_value">A1 Beginner</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -61,7 +61,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="Price" class="filter__list__label_custom">Price</label>
-                <div class="custom-select_trigger">25 $
+                <div class="custom-select_trigger"><span class="custom-select_value">25 $</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>

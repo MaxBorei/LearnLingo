@@ -11,6 +11,8 @@ export const initCustomSelect = () => {
   const option = arrSelect[0].options;
   const firstElTxt = option[0].text;
   const firstElVal = option[0].value;
+  console.log(firstElTxt);
+
   const optionLength = option.length;
   const arrOptions = [];
   for (let i = 0; i < option.length; i++) {
@@ -24,13 +26,15 @@ export const initCustomSelect = () => {
   const ulRender = selectFather.map(item =>
     item.querySelector('.custom-select_options')
   );
-  ulRender[0].innerHTML = '';
+  ulRender.forEach(element => {
+    element.innerHTML = '';
+  });
 
   for (let i = 0; i < arrSelect.length; i++) {
     for (let j = 0; j < arrSelect[i].options.length; j++) {
       ulRender[i].insertAdjacentHTML(
         'beforeend',
-        `<li class="custom_options" value="${arrSelect[i].options[j].value}">${arrSelect[i].options[j].text}</li>`
+        `<li class="custom_options" data-value="${arrSelect[i].options[j].value}">${arrSelect[i].options[j].text}</li>`
       );
     }
   }
@@ -51,11 +55,39 @@ export const initCustomSelect = () => {
     });
   });
 
-  document.addEventListener('click', event => {
-    if (event.target.closest('.custom-select')) {
+  document.addEventListener('click', clickEvent => {
+    const optionEl = clickEvent.target.closest('.custom_options');
+
+    if (optionEl) {
+      const text = optionEl.textContent.trim();
+
+      const fatherBox = optionEl.closest('.custom-select');
+      const triggerValue = fatherBox.querySelector('.custom-select_value');
+      triggerValue.textContent = text;
+
+      const value = optionEl.dataset.value;
+
+      const fatherSelect = optionEl.closest('.filter__list__text');
+      if (!fatherSelect) return;
+
+      const nativeSelect = fatherSelect.querySelector('.filter__list__select');
+      nativeSelect.value = value;
+
+      nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+      fatherBox
+        .querySelectorAll('.custom_options')
+        .forEach(opt => opt.classList.remove('is-selected'));
+      optionEl.classList.add('is-selected');
+
+      optionEl.closest('.custom-select_options')?.classList.remove('is-open');
       return;
     }
-    const ulAddOpen = document.querySelectorAll('.custom-select_options');
-    [...ulAddOpen].forEach(e => e.classList.remove('is-open'));
+
+    if (!clickEvent.target.closest('.custom-select')) {
+      document
+        .querySelectorAll('.custom-select_options')
+        .forEach(ul => ul.classList.remove('is-open'));
+    }
   });
 };
