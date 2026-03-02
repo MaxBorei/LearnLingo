@@ -11,7 +11,6 @@ export const initCustomSelect = () => {
   const option = arrSelect[0].options;
   const firstElTxt = option[0].text;
   const firstElVal = option[0].value;
-  console.log(firstElTxt);
 
   const optionLength = option.length;
   const arrOptions = [];
@@ -39,6 +38,25 @@ export const initCustomSelect = () => {
     }
   }
 
+  function applyLevelHighlight(level) {
+    const cards = document.querySelectorAll('.Teachers__item');
+
+    for (const card of cards) {
+      const pills = card.querySelectorAll('.Teacher_pills_item');
+
+      pills.forEach(p => p.classList.remove('is-active'));
+
+      if (!level) continue;
+
+      for (const pill of pills) {
+        if (pill.dataset.level === level) {
+          pill.classList.add('is-active');
+          break;
+        }
+      }
+    }
+  }
+
   btnSelect.forEach(btn => {
     btn.addEventListener('click', e => {
       const fatherBox = e.currentTarget.closest('.custom-select');
@@ -54,6 +72,8 @@ export const initCustomSelect = () => {
       return;
     });
   });
+
+  let activeLevel = '';
 
   document.addEventListener('click', clickEvent => {
     const optionEl = clickEvent.target.closest('.custom_options');
@@ -72,8 +92,14 @@ export const initCustomSelect = () => {
 
       const nativeSelect = fatherSelect.querySelector('.filter__list__select');
       nativeSelect.value = value;
+      if (nativeSelect.id === 'Level') {
+        activeLevel = nativeSelect.value;
+      }
 
       nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      setTimeout(() => {
+        applyLevelHighlight(activeLevel);
+      }, 0);
 
       fatherBox
         .querySelectorAll('.custom_options')

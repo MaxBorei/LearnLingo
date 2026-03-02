@@ -30,7 +30,6 @@
   flex-direction: column;
   gap: 8px;
   position: relative;
-  width: 100%;
 }
 .custom-select_trigger {
   border-radius: 14px;
@@ -40,10 +39,11 @@
   font-size: var(--fs-18);
   line-height: 1.11;
   background: var(--color-bg-page);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
 }
 .custom-select_trigger_svg {
   stroke-width: 2px;
