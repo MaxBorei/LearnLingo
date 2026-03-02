@@ -9,10 +9,7 @@ export const initCustomSelect = () => {
     item.querySelector('.custom-select_trigger_btn')
   );
   const option = arrSelect[0].options;
-  const firstElTxt = option[0].text;
-  const firstElVal = option[0].value;
 
-  const optionLength = option.length;
   const arrOptions = [];
   for (let i = 0; i < option.length; i++) {
     arrOptions.push(option[i].text);
