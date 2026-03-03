@@ -31,6 +31,8 @@ export function createRouter(renderView) {
           setActiveNav();
         },
         () => {
+          history.pushState(null, '', '/teachers');
+          router();
           const modalElement = document.querySelector(
             '[data-modal-name="register"]'
           );
