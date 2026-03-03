@@ -17,7 +17,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="language" class="filter__list__label_custom ">Languages</label>
-                <div class="custom-select_trigger"><span class="custom-select_value">French</span>
+                <div class="custom-select_trigger"><span class="custom-select_value"></span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -34,11 +34,13 @@ export const Filter = () => {
                 <option value="A2 Elementary">A2 Elementary</option>
                 <option value="B1 Intermediate">B1 Intermediate</option>
                 <option value="B2 Upper-Intermediate">B2 Upper-Intermediate</option>
+                <option value="C1 Advanced">C1 Advanced</option>
+                <option value="C2 Proficient">C2 Proficient</option>
             </select>
 
             <div class="custom-select">
                 <label for="Level" class="filter__list__label_custom">Level of knowledge</label>
-                <div class="custom-select_trigger"><span class="custom-select_value">A1 Beginner</span>
+                <div class="custom-select_trigger"><span class="custom-select_value"></span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -61,7 +63,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="Price" class="filter__list__label_custom">Price</label>
-                <div class="custom-select_trigger"><span class="custom-select_value">25 $</span>
+                <div class="custom-select_trigger"><span class="custom-select_value"></span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>

@@ -2,7 +2,10 @@ import getTeachers from '@/lib/teachersApi.js';
 import { TeacherCard } from '@/components/TeacherCard/teacherCard.js';
 import { Filter } from '../../components/Filter/filter.js';
 import { setTeachers, getTeachersStore } from '../../store/teachersStore.js';
-import { initCustomSelect } from '../../controllers/initCustomSelect.js';
+import {
+  applyLevelHighlight,
+  initCustomSelect,
+} from '../../controllers/initCustomSelect.js';
 
 export const Teachers = () => `
   <div class="Teachers">
@@ -81,6 +84,7 @@ export async function initTeachers() {
       applyFilters();
       counter = 4;
       renderTeachers(counter, filteredTeachers, list);
+      applyLevelHighlight(filterState.Level);
       updateButton();
     });
   }
@@ -88,10 +92,12 @@ export async function initTeachers() {
   btn.addEventListener('click', () => {
     counter += 4;
     renderTeachers(counter, filteredTeachers, list);
+    applyLevelHighlight(filterState.Level);
     updateButton();
   });
 
   renderTeachers(counter, filteredTeachers, list);
+  applyLevelHighlight(filterState.Level);
   updateButton();
 }
 
