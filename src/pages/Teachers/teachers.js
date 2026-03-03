@@ -59,6 +59,7 @@ export async function initTeachers() {
   const applyFilters = () => {
     filteredTeachers = allTeachers.filter(teacher =>
       Object.entries(filterState).every(([key, value]) => {
+        if (value == null || value === '') return true;
         const teacherKey = mapKeys[key];
         const teacherValue = teacher[teacherKey];
 

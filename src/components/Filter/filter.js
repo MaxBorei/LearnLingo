@@ -3,8 +3,9 @@ export const Filter = () => {
 <div class='filter'>
     <form action="filter_list_teachers" class="filter__list">
         <div class="filter__list__text">
-            <label for="language" class="filter__list__label visually-hidden">Languages</label>
-            <select id="language" class="filter__list__select" name="Languages">
+            <label for="Language" class="filter__list__label visually-hidden">Languages</label>
+            <select id="Language" class="filter__list__select" name="Languages">
+                <option value="">All languages</option>
                 <option value="French">French</option>
                 <option value="English">English</option>
                 <option value="German">German</option>
@@ -16,8 +17,8 @@ export const Filter = () => {
             </select>
 
             <div class="custom-select">
-                <label for="language" class="filter__list__label_custom ">Languages</label>
-                <div class="custom-select_trigger"><span class="custom-select_value"></span>
+                <label for="Language" class="filter__list__label_custom ">Languages</label>
+                <div class="custom-select_trigger"><span class="custom-select_value">All languages</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -30,6 +31,7 @@ export const Filter = () => {
         <div class="filter__list__text">
             <label for="Level" class="filter__list__label visually-hidden">Level of knowledge</label>
             <select id="Level" name="Level" class="filter__list__select">
+                <option value="">All levels</option>
                 <option value="A1 Beginner">A1 Beginner</option>
                 <option value="A2 Elementary">A2 Elementary</option>
                 <option value="B1 Intermediate">B1 Intermediate</option>
@@ -40,7 +42,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="Level" class="filter__list__label_custom">Level of knowledge</label>
-                <div class="custom-select_trigger"><span class="custom-select_value"></span>
+                <div class="custom-select_trigger"><span class="custom-select_value">All levels</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>
@@ -53,6 +55,7 @@ export const Filter = () => {
         <div class="filter__list__text">
             <label for="Price" class="filter__list__label visually-hidden">Price</label>
             <select id="Price" name="Price" class="filter__list__select">
+                <option value="">All prices</option>
                 <option value="25">25 $</option>
                 <option value="27">27 $</option>
                 <option value="28">28 $</option>
@@ -63,7 +66,7 @@ export const Filter = () => {
 
             <div class="custom-select">
                 <label for="Price" class="filter__list__label_custom">Price</label>
-                <div class="custom-select_trigger"><span class="custom-select_value"></span>
+                <div class="custom-select_trigger"><span class="custom-select_value">All prices</span>
                 <button type="button" class="custom-select_trigger_btn">
                 <svg class="custom-select_trigger_svg">
                 <use href='/sprite.svg#icon-arrow-down'></use>

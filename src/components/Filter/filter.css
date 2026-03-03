@@ -1,6 +1,6 @@
 .filter__list {
   display: grid;
-  grid-template-columns: 221px 198px 124px;
+  grid-template-columns: 221px 198px 138px;
   align-items: start;
   gap: 20px;
 }

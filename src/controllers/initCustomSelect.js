@@ -27,6 +27,12 @@ export const initCustomSelect = () => {
   });
 
   for (let i = 0; i < arrSelect.length; i++) {
+    // ulRender[i].insertAdjacentHTML(
+    //   'beforeend',
+    //   `<li class="custom_options" data-value="">All ${arrSelect[i].id}s</li>`
+    // );
+    // console.log(arrSelect[i].id);
+
     for (let j = 0; j < arrSelect[i].options.length; j++) {
       ulRender[i].insertAdjacentHTML(
         'beforeend',
