@@ -62,16 +62,24 @@ document.addEventListener('submit', async e => {
   }
 });
 
-document.addEventListener('click', async e => {
-  const btn = e.target.closest('[data-action="logout"]');
-  if (!btn) return;
+export const initLogout = router => {
+  document.addEventListener('click', async e => {
+    const btn = e.target.closest('[data-action="logout"]');
+    if (!btn) return;
 
-  try {
-    await signOut(auth);
-  } catch (err) {
-    console.error('Logout error:', err);
-  }
-});
+    try {
+      await signOut(auth);
+
+      if (window.location.pathname === '/favorites') {
+        history.pushState(null, '', '/teachers');
+        router();
+        return;
+      }
+    } catch (err) {
+      console.error('Logout error:', err);
+    }
+  });
+};
 
 function clearFormError(form) {
   form.querySelector('.modal__error')?.remove();

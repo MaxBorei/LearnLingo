@@ -2,6 +2,10 @@ import { Hero } from '@/components/Hero/hero.js';
 import { Teachers, initTeachers } from '@/pages/Teachers/teachers.js';
 import { notFound } from '@/pages/Not-found/not-found.js';
 import { setActiveNav } from '../controllers/headerController.js';
+import { Favorites } from '../pages/Favorites/Favorites.js';
+import { authGuard } from '../controllers/authGuard.js';
+import { openModal } from '../controllers/modalController.js';
+import Toastify from 'toastify-js';
 
 export function createRouter(renderView) {
   async function router() {
@@ -17,6 +21,33 @@ export function createRouter(renderView) {
       renderView(Teachers());
       await initTeachers();
       setActiveNav();
+      return;
+    } else if (path === '/favorites') {
+      document.body.className = 'page-favorites';
+
+      authGuard(
+        user => {
+          renderView(Favorites());
+          setActiveNav();
+        },
+        () => {
+          const modalElement = document.querySelector(
+            '[data-modal-name="register"]'
+          );
+          Toastify({
+            text: 'Please register or log in to view favorites.',
+            duration: 3000,
+            close: true,
+            gravity: 'top',
+            position: 'right',
+            stopOnFocus: true,
+            className: 'custom-toast',
+          }).showToast();
+          if (!modalElement) return;
+          openModal(modalElement);
+        }
+      );
+
       return;
     } else {
       document.body.className = 'page-not-found';

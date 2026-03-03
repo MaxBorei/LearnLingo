@@ -9,6 +9,7 @@ import { modalLogin } from './components/Modal-Login/modalLogin.js';
 import { initHeader } from './controllers/headerController.js';
 
 import { createRouter } from './router/router.js';
+import { initLogout } from './controllers/authController.js';
 
 const app = document.querySelector('#app');
 
@@ -31,7 +32,7 @@ app.innerHTML = Layout();
 initHeader();
 
 const { router, initLinkRouting, initPopstate } = createRouter(renderView);
-
+initLogout(router);
 initLinkRouting();
 initPopstate();
 router();

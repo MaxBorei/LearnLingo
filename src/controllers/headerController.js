@@ -23,11 +23,27 @@ export function setActiveNav() {
   const path = window.location.pathname;
 
   const teachersLink = document.querySelector('.onPage_Teachers');
-  if (!teachersLink) return;
+  const favoritesLink = document.querySelector('.onPage_Favorites');
+  if (teachersLink) {
+    if (teachersLink.classList.contains('active')) {
+      teachersLink.classList.remove('active');
+    }
+  }
+  if (favoritesLink) {
+    if (favoritesLink.classList.contains('active')) {
+      favoritesLink.classList.remove('active');
+    }
+  }
 
   if (path === '/teachers') {
-    teachersLink.classList.add('active');
-  } else {
-    teachersLink.classList.remove('active');
+    if (teachersLink) {
+      teachersLink.classList.add('active');
+    }
   }
+  if (path === '/favorites') {
+    if (favoritesLink) {
+      favoritesLink.classList.add('active');
+    }
+  }
+  return;
 }

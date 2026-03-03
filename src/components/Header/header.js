@@ -19,6 +19,9 @@ export const Header = (user = null) => {
                         <a href="/" class="nav__link" data-link>Home</a>
                         <a href="/teachers" class="nav__link teachers" data-link>Teachers
                         <span class="onPage_Teachers" aria-hidden="true"></span>
+                        </a>
+                        <a href="/favorites" class="nav__link favorites" data-link>Favorites
+                        <span class="onPage_Favorites" aria-hidden="true"></span>
                         </a>                        
                     </nav>
                 </div>

@@ -5,3 +5,5 @@ export const setTeachers = newTeachers => {
 };
 
 export const getTeachersStore = () => teachers;
+
+console.log(getTeachersStore());
