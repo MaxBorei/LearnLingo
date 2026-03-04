@@ -57,7 +57,7 @@ button {
   border: none;
   padding: 0;
 }
-/* прибрав миготіння кнопки */
+/* прибрав миготіння кнопки  */
 button {
   -webkit-tap-highlight-color: transparent;
 }

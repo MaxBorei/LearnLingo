@@ -89,7 +89,13 @@ body.page-teachers {
   width: 26px;
   height: 26px;
 }
-
+/* прибрав миготіння кнопки */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+button:active {
+  background: transparent;
+}
 .Teachers__about__svg {
   display: flex;
   align-items: center;
