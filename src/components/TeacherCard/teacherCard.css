@@ -80,21 +80,14 @@ body.page-teachers {
   align-items: flex-start;
   width: 100%;
 }
-.Teachers__about__svg.book {
+.Teachers__about__svg.book,
+.Teachers__about__svg.heart {
   stroke: var(--color-text-primary);
   fill: none;
 }
 .Teachers__about__svg.heart {
-  fill: var(--color-text-primary);
   width: 26px;
   height: 26px;
-}
-/* прибрав миготіння кнопки */
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-button:active {
-  background: transparent;
 }
 .Teachers__about__svg {
   display: flex;
@@ -102,6 +95,10 @@ button:active {
   justify-content: center;
   width: 16px;
   height: 16px;
+}
+.Teachers__about__btn.is-active .Teachers__about__svg {
+  fill: var(--color-accent);
+  stroke: var(--color-accent);
 }
 .Teachers__about__box {
   display: flex;

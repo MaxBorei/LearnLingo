@@ -17,8 +17,31 @@ document.addEventListener('click', event => {
   trialBtn?.classList.remove('hidden');
 });
 
+export const syncHearts = user => {
+  if (!user) {
+    document
+      .querySelectorAll('.Teachers__about__btn')
+      .forEach(element => element.classList.remove('is-active'));
+    return;
+  }
+  const favorites = getFavoritesMap();
+
+  const cards = document.querySelectorAll('.Teachers__item');
+  const uid = user.uid;
+  cards.forEach(card => {
+    const teacherId = card.dataset.id;
+    const btnHeart = card.querySelector('.Teachers__about__btn');
+    if (!btnHeart) return;
+    if (favorites[uid]?.includes(teacherId)) {
+      btnHeart.classList.add('is-active');
+    } else {
+      btnHeart.classList.remove('is-active');
+    }
+  });
+};
+
 document.addEventListener('click', event => {
-  const btnHeart = event.target.closest('.heart');
+  const btnHeart = event.target.closest('.Teachers__about__btn');
   if (!btnHeart) return;
   const cardHeart = btnHeart.closest('.Teachers__item');
   if (!cardHeart) return;
@@ -36,12 +59,6 @@ document.addEventListener('click', event => {
     }).showToast();
     return;
   }
-  console.log('before:', getFavoritesMap());
   const userFavorites = toggleFavorite(user.uid, cardHeart.dataset.id);
-  console.log('after:', getFavoritesMap());
-  console.log('userFavorites:', userFavorites);
-  // console.log('uid:', user.uid);
-  // console.log('teacherId:', cardHeart.dataset.id);
-  // console.log('before:', getFavoritesMap());
-  // console.log('after:', toggleFavorite(user.uid, cardHeart.dataset.id));
+  syncHearts(user);
 });

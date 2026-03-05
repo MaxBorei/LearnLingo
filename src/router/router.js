@@ -6,11 +6,13 @@ import { Favorites } from '../pages/Favorites/Favorites.js';
 import { authGuard } from '../controllers/authGuard.js';
 import { openModal } from '../controllers/modalController.js';
 import Toastify from 'toastify-js';
+import { syncHearts } from '../controllers/teacherCardController.js';
+import { auth } from '../lib/firebase.js';
 
 export function createRouter(renderView) {
   async function router() {
     const path = window.location.pathname;
-
+    const user = auth.currentUser;
     if (path === '/') {
       document.body.className = 'page-home';
       renderView(Hero());
@@ -20,6 +22,7 @@ export function createRouter(renderView) {
       document.body.className = 'page-teachers';
       renderView(Teachers());
       await initTeachers();
+      syncHearts(user);
       setActiveNav();
       return;
     } else if (path === '/favorites') {

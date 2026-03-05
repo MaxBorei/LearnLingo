@@ -3,6 +3,7 @@ import '@/controllers/modalController.js';
 import '@/controllers/authController.js';
 import '@/controllers/teacherCardController.js';
 import '@/store/teachersStore.js';
+import '@/controllers/favoritesController.js';
 
 import { modalRegister } from './components/Modal-Register/modalRegister.js';
 import { modalLogin } from './components/Modal-Login/modalLogin.js';
@@ -10,6 +11,9 @@ import { initHeader } from './controllers/headerController.js';
 
 import { createRouter } from './router/router.js';
 import { initLogout } from './controllers/authController.js';
+import { syncHearts } from './controllers/teacherCardController.js';
+import { auth } from './lib/firebase.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
 const app = document.querySelector('#app');
 
@@ -35,4 +39,7 @@ const { router, initLinkRouting, initPopstate } = createRouter(renderView);
 initLogout(router);
 initLinkRouting();
 initPopstate();
+onAuthStateChanged(auth, user => {
+  syncHearts(user);
+});
 router();
