@@ -5,3 +5,6 @@
 .Favorites_message {
   font-size: var(--fs-24);
 }
+.nav__link.favorites.btn {
+  margin-top: 24px;
+}

@@ -68,7 +68,8 @@ document.addEventListener('click', event => {
     if (!favoriteList) return;
     const favoriteItems = favoriteList.querySelectorAll('.Teachers__item');
     if (favoriteItems.length === 0) {
-      favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p>`;
+      favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p><a href="/teachers" class="nav__link favorites btn" data-link>Go to teachers
+      </a>`;
       return;
     }
   }

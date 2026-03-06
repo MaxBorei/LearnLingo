@@ -1,6 +1,7 @@
 import { getTeachersStore } from '../store/teachersStore.js';
 import { modalTrial } from '@/components/Modal-Trial/modalTrial.js';
 import Toastify from 'toastify-js';
+import { auth } from '@/lib/firebase.js';
 
 document.addEventListener('click', e => {
   const openTrigger = e.target.closest('[data-modal]');
@@ -23,6 +24,20 @@ document.addEventListener('click', e => {
     const teachers = getTeachersStore();
     const teacher = teachers.find(t => t.id === id);
     if (!teacher) return;
+
+    const user = auth.currentUser;
+    if (!user) {
+      Toastify({
+        text: 'Please register or log in to submit form.',
+        duration: 3000,
+        close: true,
+        gravity: 'top',
+        position: 'right',
+        stopOnFocus: true,
+        className: 'custom-toast',
+      }).showToast();
+      return;
+    }
 
     document
       .querySelector('[data-modal-name="trial"]')

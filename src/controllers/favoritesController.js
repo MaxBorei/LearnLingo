@@ -15,7 +15,9 @@ export async function initFavorites(user) {
   const favoriteList = document.querySelector('.Teachers__list');
   if (!favoriteList) return;
   if (favoriteTeachers.length === 0) {
-    favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p>`;
+    favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p>
+     <a href="/teachers" class="nav__link favorites btn" data-link>Go to teachers
+    </a>`;
     return;
   }
   favoriteList.innerHTML = favoriteTeachers.map(TeacherCard).join('');
