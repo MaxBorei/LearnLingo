@@ -1,0 +1,7 @@
+.Favorites .Teachers__list {
+  margin-top: 24px;
+  align-items: center;
+}
+.Favorites_message {
+  font-size: var(--fs-24);
+}

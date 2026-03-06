@@ -31,6 +31,7 @@ export const syncHearts = user => {
   cards.forEach(card => {
     const teacherId = card.dataset.id;
     const btnHeart = card.querySelector('.Teachers__about__btn');
+
     if (!btnHeart) return;
     if (favorites[uid]?.includes(teacherId)) {
       btnHeart.classList.add('is-active');
@@ -59,6 +60,17 @@ document.addEventListener('click', event => {
     }).showToast();
     return;
   }
-  const userFavorites = toggleFavorite(user.uid, cardHeart.dataset.id);
+  if (window.location.pathname === '/favorites') {
+    const cardRemove = btnHeart.closest('.Teachers__item');
+    cardRemove.remove();
+    const favoriteList = document.querySelector('.Teachers__list');
+    if (!favoriteList) return;
+    const favoriteItems = favoriteList.querySelectorAll('.Teachers__item');
+    if (favoriteItems.length === 0) {
+      favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p>`;
+      return;
+    }
+  }
+
   syncHearts(user);
 });

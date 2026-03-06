@@ -8,6 +8,7 @@ import { openModal } from '../controllers/modalController.js';
 import Toastify from 'toastify-js';
 import { syncHearts } from '../controllers/teacherCardController.js';
 import { auth } from '../lib/firebase.js';
+import { initFavorites } from '../controllers/favoritesController.js';
 
 export function createRouter(renderView) {
   async function router() {
@@ -32,6 +33,7 @@ export function createRouter(renderView) {
         user => {
           renderView(Favorites());
           setActiveNav();
+          initFavorites(user);
         },
         () => {
           history.pushState(null, '', '/teachers');

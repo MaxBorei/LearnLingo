@@ -1,5 +1,7 @@
 export const Favorites = () => {
-  return `<div class='Favorites'><div class="container">
-      <ul class="Favorites__list"></ul>
-  </div></div>`;
+  return `<div class='Favorites'>
+    <div class="container">
+        <ul class="Teachers__list"></ul>
+    </div>
+</div>`;
 };

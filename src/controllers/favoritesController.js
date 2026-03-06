@@ -1,14 +1,23 @@
-import { auth } from '../lib/firebase.js';
-import { getTeachersStore } from '../store/teachersStore.js';
+import { TeacherCard } from '../components/TeacherCard/teacherCard.js';
+import { teachersStore } from '../store/teachersStore.js';
 import { getFavoritesMap } from './favoritesStorage.js';
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+import { syncHearts } from './teacherCardController.js';
 
-onAuthStateChanged(auth, user => {
-  console.log('favorites user:', user?.uid ?? null);
-  console.log('teachers count:', getTeachersStore().length);
-  console.log('favorites map:', getFavoritesMap());
-});
+export async function initFavorites(user) {
+  const favorites = getFavoritesMap();
+  const uid = user.uid;
+  const favoriteIds = favorites[uid] || [];
+  const teachersBase = await teachersStore();
+  const favoriteTeachers = teachersBase.filter(element =>
+    favoriteIds.includes(element.id)
+  );
 
-// const favorites = getFavoritesMap();
-// const favoriteIds = favorites[uid] || [];
-// console.log(favoriteIds);
+  const favoriteList = document.querySelector('.Teachers__list');
+  if (!favoriteList) return;
+  if (favoriteTeachers.length === 0) {
+    favoriteList.innerHTML = `<p class="Favorites_message">You have no favorite teachers yet</p>`;
+    return;
+  }
+  favoriteList.innerHTML = favoriteTeachers.map(TeacherCard).join('');
+  syncHearts(user);
+}

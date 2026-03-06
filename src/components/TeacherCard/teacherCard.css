@@ -1,4 +1,5 @@
-body.page-teachers {
+body.page-teachers,
+body.page-favorites {
   background: var(--color-bg-surface);
 }
 .Teachers__item {

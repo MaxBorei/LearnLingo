@@ -1,7 +1,10 @@
-import getTeachers from '@/lib/teachersApi.js';
 import { TeacherCard } from '@/components/TeacherCard/teacherCard.js';
 import { Filter } from '../../components/Filter/filter.js';
-import { setTeachers, getTeachersStore } from '../../store/teachersStore.js';
+import {
+  setTeachers,
+  getTeachersStore,
+  teachersStore,
+} from '../../store/teachersStore.js';
 import {
   applyLevelHighlight,
   initCustomSelect,
@@ -40,11 +43,7 @@ export async function initTeachers() {
   if (!btn || !list) return;
   initCustomSelect();
 
-  const teachers = await getTeachers();
-  setTeachers(teachers);
-
-  const allTeachers = getTeachersStore();
-
+  const allTeachers = await teachersStore();
   const form = document.querySelector('.filter__list');
   let filterState = {};
   let filteredTeachers = allTeachers;
