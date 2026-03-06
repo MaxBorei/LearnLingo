@@ -60,6 +60,7 @@ document.addEventListener('click', event => {
     }).showToast();
     return;
   }
+  const userFavorites = toggleFavorite(user.uid, cardHeart.dataset.id);
   if (window.location.pathname === '/favorites') {
     const cardRemove = btnHeart.closest('.Teachers__item');
     cardRemove.remove();
