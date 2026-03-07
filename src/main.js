@@ -2,6 +2,7 @@ import '@/style.css';
 import '@/controllers/modalController.js';
 import '@/controllers/authController.js';
 import '@/controllers/teacherCardController.js';
+import '@/controllers/themeSwitcherController.js';
 import '@/store/teachersStore.js';
 import '@/controllers/favoritesController.js';
 
@@ -14,6 +15,7 @@ import { initLogout } from './controllers/authController.js';
 import { syncHearts } from './controllers/teacherCardController.js';
 import { auth } from './lib/firebase.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+import { themeSwitcher } from './components/Theme-switcher/Theme-switcher.js';
 
 const app = document.querySelector('#app');
 
@@ -22,6 +24,7 @@ function Layout() {
     <main id="view"></main>
     ${modalRegister()}
     ${modalLogin()}
+    ${themeSwitcher()}
   `;
 }
 
