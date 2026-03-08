@@ -36,7 +36,7 @@ export function createRouter(renderView) {
           initFavorites(user);
         },
         () => {
-          history.pushState(null, '', '/teachers');
+          history.pushState(null, '', '/');
           router();
           const modalElement = document.querySelector(
             '[data-modal-name="register"]'
@@ -66,6 +66,27 @@ export function createRouter(renderView) {
     document.addEventListener('click', e => {
       const link = e.target.closest('a[data-link]');
       if (!link) return;
+      const href = link.getAttribute('href');
+      if (href === '/favorites') {
+        e.preventDefault();
+        if (!auth.currentUser) {
+          const modalElement = document.querySelector(
+            '[data-modal-name="register"]'
+          );
+          Toastify({
+            text: 'Please register or log in to view favorites.',
+            duration: 3000,
+            close: true,
+            gravity: 'top',
+            position: 'right',
+            stopOnFocus: true,
+            className: 'custom-toast',
+          }).showToast();
+          if (!modalElement) return;
+          openModal(modalElement);
+          return;
+        }
+      }
 
       e.preventDefault();
       history.pushState(null, '', link.getAttribute('href'));
