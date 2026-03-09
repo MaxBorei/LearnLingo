@@ -12,6 +12,8 @@ export const themeSwitcher = () => {
     <button class="btn-theme" type='button' data-theme="blue"></button>
     <button class="btn-theme" type='button' data-theme="peachRose"></button>
     <button class="btn-theme" type='button' data-theme="softPeach"></button>
+    <button class="btn-theme" type='button' data-theme="violet"></button>
+    <button class="btn-theme" type='button' data-theme="pink"></button>
 </div>
 </div>
     `;

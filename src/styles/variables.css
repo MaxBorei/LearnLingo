@@ -64,3 +64,13 @@
   --color-accent: #f0aa8d;
   --color-accent-hover: #f4c8ba;
 }
+
+:root[data-theme='violet'] {
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #ede9fe;
+}
+
+:root[data-theme='pink'] {
+  --color-accent: #ec4899;
+  --color-accent-hover: #fce7f3;
+}

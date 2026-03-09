@@ -16,6 +16,8 @@ import { auth } from './lib/firebase.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 import { themeSwitcherController } from './controllers/themeSwitcherController.js';
 import { themeSwitcher } from './components/Theme-switcher/Theme-switcher.js';
+import { scrollTop } from './components/ScrollTopButton.js/ScrollTopButton.js';
+import { scrollTopBtn } from './controllers/ScrollTopButtonController.js';
 
 const app = document.querySelector('#app');
 
@@ -25,6 +27,7 @@ function Layout() {
     ${modalRegister()}
     ${modalLogin()}
     ${themeSwitcher()}
+    ${scrollTop()}
   `;
 }
 
@@ -36,6 +39,7 @@ function renderView(html) {
 
 app.innerHTML = Layout();
 themeSwitcherController();
+scrollTopBtn();
 initHeader();
 
 const { router, initLinkRouting, initPopstate } = createRouter(renderView);

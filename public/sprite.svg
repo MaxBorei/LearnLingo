@@ -88,4 +88,9 @@
         <circle cx="16.5" cy="10.5" r="1" fill="currentColor" />
         <circle cx="9" cy="15" r="1" fill="currentColor" />
     </symbol>
+
+    <symbol id="icon-arrow-up" viewBox="0 0 20 20">
+        <path
+            d="M9 3.828l-6.071 6.071-1.414-1.414 8.485-8.485 8.485 8.485-1.414 1.414-6.071-6.071v16.172h-2v-16.172z"></path>
+    </symbol>
 </svg>

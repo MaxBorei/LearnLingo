@@ -194,7 +194,7 @@ body.page-favorites {
 .Teacher_rewies_item_avatar {
   font-weight: var(--fw-bold);
   font-size: var(--fs-18);
-  color: var(--color-text-success);
+  color: var(--color-text-primary);
 }
 .Teacher_rewies_item_rating_box {
   display: flex;

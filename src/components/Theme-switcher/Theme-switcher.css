@@ -79,3 +79,9 @@
 .btn-theme[data-theme='softPeach'] {
   background: #f0aa8d;
 }
+.btn-theme[data-theme='violet'] {
+  background: #8b5cf6;
+}
+.btn-theme[data-theme='pink'] {
+  background: #ec4899;
+}
