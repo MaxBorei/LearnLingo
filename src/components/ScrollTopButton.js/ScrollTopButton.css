@@ -14,7 +14,7 @@
   pointer-events: none;
 }
 .scrollTop-svg {
-  stroke: var(--color-text-primary);
+  fill: var(--color-text-inverse);
   width: 20px;
   height: 20px;
 }

@@ -94,6 +94,8 @@
 .header__inner {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 
 .header__auth {
@@ -195,4 +197,22 @@
 .onPage_Teachers.active,
 .onPage_Favorites.active {
   display: block;
+}
+.burger-button-box {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .burger-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .burger-button-svg {
+    width: 24px;
+    height: 24px;
+  }
+  .nav,
+  .header__auth_user {
+    display: none;
+  }
 }

@@ -5,7 +5,7 @@ export const Hero = () => {
         <div class="Hero__content">
             <div class="Hero__content-title">
                 <h1 class="Hero__content-title-main">Unlock your potential with the best <span class="Hero__content-title-main-span">language </span>tutors</h1>
-                <p class="Hero__content-title-sub">Embark on an Exciting Language Journey with Expert Language<br> Tutors: Elevate your language proficiency to new heights by<br> connecting with highly qualified and experienced tutors.</p>
+                <p class="Hero__content-title-sub">Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors.</p>
                 <div class="Hero__btn"><a href="/teachers" data-link class="Hero__content-title-btn">Get Started</a></div>
             </div>
             <div class="Hero__content-image">

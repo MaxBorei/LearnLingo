@@ -3,7 +3,6 @@ export const scrollTopBtn = () => {
 
   if (scrollBox) {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
       if (window.scrollY > 300) {
         scrollBox.classList.add('active');
       } else {

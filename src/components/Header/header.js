@@ -29,6 +29,14 @@ export const Header = (user = null) => {
                 <div class="header__auth">
                 ${user ? renderAuth(user) : renderUnauth()}
                 </div>
+                <div class="burger-button-box">
+                  <button class="burger-button-btn">
+                    <svg class="burger-button-svg">
+                      <use href='/sprite.svg#icon-menu'>                                                                    
+                      </use>
+                    </svg>
+                  </button>
+                </div>
     </div>
 </div>`;
 };
