@@ -15,6 +15,7 @@ export function initHeader(rootSelector = '#app') {
 
   onAuthStateChanged(auth, user => {
     headerRoot.innerHTML = Header(user);
+    openMobileMenu();
     setActiveNav();
   });
 }
@@ -46,4 +47,17 @@ export function setActiveNav() {
     }
   }
   return;
+}
+
+export function openMobileMenu() {
+  const burgerBtn = document.querySelector('.burger-button-btn');
+  if (!burgerBtn) return;
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (!mobileMenu) return;
+  if (!burgerBtn.dataset.listener) {
+    burgerBtn.dataset.listener = 'true';
+    burgerBtn.addEventListener('click', e => {
+      mobileMenu.classList.toggle('open');
+    });
+  }
 }

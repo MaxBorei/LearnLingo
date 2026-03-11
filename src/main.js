@@ -49,4 +49,5 @@ initPopstate();
 onAuthStateChanged(auth, user => {
   syncHearts(user);
 });
+
 router();
