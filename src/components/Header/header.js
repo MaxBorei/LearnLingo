@@ -30,11 +30,13 @@ export const Header = (user = null) => {
                 </button>
             </div>
         </div>
-        <div class="mobile-menu">
-        <h2 class='mobile-menu-title'>Pages:</h2>
-        <div class="mobile-menu-nav-box">${renderNav()}</div>
-        <h2 class='mobile-menu-title'>Auth:</h2>
-        <div class="mobile-menu-auth-box">${user ? renderAuth(user) : renderUnauth()}</div>
+        <div class="mobile-overlay">
+            <div class="mobile-menu">
+            <h2 class='mobile-menu-title'>Pages:</h2>
+            <div class="mobile-menu-nav-box">${renderNav()}</div>
+            <h2 class='mobile-menu-title'>Auth:</h2>
+            <div class="mobile-menu-auth-box">${user ? renderAuth(user) : renderUnauth()}</div>
+            </div>
         </div>
     </div>`;
 };

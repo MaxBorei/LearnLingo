@@ -52,7 +52,7 @@ export function setActiveNav() {
 export function openMobileMenu() {
   const burgerBtn = document.querySelector('.burger-button-btn');
   if (!burgerBtn) return;
-  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenu = document.querySelector('.mobile-overlay');
   if (!mobileMenu) return;
   if (!burgerBtn.dataset.listener) {
     burgerBtn.dataset.listener = 'true';
@@ -62,6 +62,7 @@ export function openMobileMenu() {
       const hrefIcon = iconMenu.getAttribute('href');
       if (hrefIcon === '/sprite.svg#icon-menu') {
         iconMenu.setAttribute('href', '/sprite.svg#icon-close');
+        document.body.style.overflow = 'hidden';
       } else {
         iconMenu.setAttribute('href', '/sprite.svg#icon-menu');
       }
