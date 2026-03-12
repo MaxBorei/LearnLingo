@@ -56,8 +56,17 @@ export function openMobileMenu() {
   if (!mobileMenu) return;
   if (!burgerBtn.dataset.listener) {
     burgerBtn.dataset.listener = 'true';
+    const iconMenu = burgerBtn.querySelector('use');
     burgerBtn.addEventListener('click', e => {
       mobileMenu.classList.toggle('open');
+      const hrefIcon = iconMenu.getAttribute('href');
+      if (hrefIcon === '/sprite.svg#icon-menu') {
+        iconMenu.setAttribute('href', '/sprite.svg#icon-close');
+      } else {
+        iconMenu.setAttribute('href', '/sprite.svg#icon-menu');
+      }
     });
   }
 }
+
+// icon - close;

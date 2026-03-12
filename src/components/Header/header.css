@@ -216,6 +216,7 @@
   .burger-button-svg {
     width: 24px;
     height: 24px;
+    stroke: var(--color-text-primary);
   }
   .nav__box,
   .header__auth {
@@ -230,8 +231,9 @@
   .mobile-menu {
     z-index: 25;
     position: absolute;
-    right: 0;
-    width: auto;
+    top: 100%;
+    right: 4%;
+    width: 50%;
     height: auto;
     background: var(--color-bg-surface);
     padding: 20px;
@@ -253,9 +255,7 @@
   .mobile-menu-auth-box {
     background: var(--color-bg-page);
     display: flex;
-
     align-items: center;
-    justify-content: flex-start;
     padding: 20px;
     border-radius: 20px;
     gap: 10px;
@@ -282,5 +282,12 @@
     height: 32px;
     border-radius: 20px;
     padding: 4px;
+  }
+  .header__auth_user {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .mobile-menu-auth-box {
+    justify-content: space-between;
   }
 }
