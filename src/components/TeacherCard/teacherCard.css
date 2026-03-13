@@ -58,7 +58,7 @@ body.page-favorites {
 .Teacher__about__list {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(5px, 2.22vw, 32px);
 }
 .Teachers__about__item {
   display: flex;
@@ -226,10 +226,11 @@ body.page-favorites {
 @media screen and (max-width: 900px) {
   .Teachers__item {
     flex-direction: column;
-    gap: 8px;
+    gap: 18px;
     padding: 12px;
     width: auto;
     position: relative;
+    align-items: center;
   }
   .Teachers__about__svg.heart {
     position: absolute;
@@ -238,9 +239,23 @@ body.page-favorites {
   }
   .Teacher__CTA {
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
   }
   .Teacher_pills__list {
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .Teacher__about__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Teachers__info {
+    flex-direction: row;
+    align-items: center;
+  }
+  .Teacher__content__box {
+    width: 100%;
+    justify-content: center;
   }
 }
