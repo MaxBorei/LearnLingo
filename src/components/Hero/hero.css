@@ -133,6 +133,7 @@
   }
   .Hero__content-image {
     width: 100%;
+    height: 350px;
   }
   .stats {
     display: grid;
@@ -153,5 +154,11 @@
   }
   .Hero__content-title-main {
     margin-bottom: 10px;
+  }
+  .Hero__content-image-mac {
+    top: 115%;
+  }
+  .Hero__content-image-face {
+    top: 43%;
   }
 }

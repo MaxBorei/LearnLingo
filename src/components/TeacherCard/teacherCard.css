@@ -223,3 +223,24 @@ body.page-favorites {
 .hidden {
   display: none;
 }
+@media screen and (max-width: 900px) {
+  .Teachers__item {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    width: auto;
+    position: relative;
+  }
+  .Teachers__about__svg.heart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  .Teacher__CTA {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .Teacher_pills__list {
+    flex-wrap: wrap;
+  }
+}

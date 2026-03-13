@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 import { auth } from '@/lib/firebase.js';
 import { Header } from '@/components/Header/header.js';
+import { mobileMenuController } from './mobileMenuController.js';
 
 export function initHeader(rootSelector = '#app') {
   const root = document.querySelector(rootSelector);
@@ -15,7 +16,7 @@ export function initHeader(rootSelector = '#app') {
 
   onAuthStateChanged(auth, user => {
     headerRoot.innerHTML = Header(user);
-    openMobileMenu();
+    mobileMenuController();
     setActiveNav();
   });
 }
@@ -47,45 +48,4 @@ export function setActiveNav() {
     }
   }
   return;
-}
-
-export function openMobileMenu() {
-  const burgerBtn = document.querySelector('.burger-button-btn');
-  if (!burgerBtn) return;
-  const mobileOverlay = document.querySelector('.mobile-overlay');
-  if (!mobileOverlay) return;
-  const iconMenu = burgerBtn.querySelector('use');
-  if (!burgerBtn.dataset.listener) {
-    burgerBtn.dataset.listener = 'true';
-    burgerBtn.addEventListener('click', e => {
-      mobileOverlay.classList.toggle('open');
-      if (mobileOverlay.classList.contains('open')) {
-        iconMenu.setAttribute('href', '/sprite.svg#icon-close');
-        document.body.style.overflow = 'hidden';
-      } else {
-        iconMenu.setAttribute('href', '/sprite.svg#icon-menu');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-  if (!mobileOverlay.dataset.listener) {
-    mobileOverlay.dataset.listener = 'true';
-    mobileOverlay.addEventListener('click', el => {
-      if (el.target === mobileOverlay) {
-        mobileOverlay.classList.remove('open');
-        iconMenu.setAttribute('href', '/sprite.svg#icon-menu');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-  if (!document.isOpenMobileMenu) {
-    document.isOpenMobileMenu = true;
-    document.addEventListener('keydown', el => {
-      if (el.key === 'Escape' && mobileOverlay.classList.contains('open')) {
-        mobileOverlay.classList.remove('open');
-        iconMenu.setAttribute('href', '/sprite.svg#icon-menu');
-        document.body.style.overflow = '';
-      }
-    });
-  }
 }

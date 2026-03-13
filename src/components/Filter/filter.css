@@ -94,3 +94,10 @@
 .custom_options.is-selected {
   color: var(--color-text-primary);
 }
+
+@media screen and (max-width: 900px) {
+  .filter__list {
+    display: flex;
+    flex-direction: column;
+  }
+}
