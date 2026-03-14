@@ -7,4 +7,6 @@
 }
 .nav__link.favorites.btn {
   margin-top: 24px;
+  align-items: center;
+  justify-content: center;
 }
