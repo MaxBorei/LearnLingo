@@ -83,10 +83,17 @@
   position: relative;
 }
 .modal.trial {
-  overflow: auto;
-  scrollbar-width: none;
-  height: 972px;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(90vw, 600px);
+  max-height: calc(100vh - 32px);
+
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .modal__form.trial > button[type='submit'] {
   margin-top: 0px;
@@ -98,4 +105,9 @@
     var(--color-accent)
   );
   color: var(--color-text-primary);
+}
+@media screen and (max-width: 900px) {
+  .modal {
+    display: block;
+  }
 }

@@ -258,4 +258,7 @@ body.page-favorites {
     width: 100%;
     justify-content: center;
   }
+  .Teacher_All_box {
+    align-items: center;
+  }
 }

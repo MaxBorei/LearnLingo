@@ -135,4 +135,9 @@
     width: 300px;
     padding: 40px;
   }
+  .modal__close-svg {
+    stroke-width: 1.5px;
+    width: 24px;
+    height: 24px;
+  }
 }

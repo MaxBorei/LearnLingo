@@ -29,3 +29,9 @@
 .Teacher__filter__box {
   margin-bottom: 32px;
 }
+@media screen and (max-width: 900px) {
+  .btn {
+    height: 44px;
+    padding: 12px;
+  }
+}
