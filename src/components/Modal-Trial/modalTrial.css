@@ -90,10 +90,24 @@
 
   width: min(90vw, 600px);
   max-height: calc(100vh - 32px);
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 40px;
 
   overflow-y: auto;
+  border-radius: 30px;
+  background: var(--color-bg-page);
+
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+.modal.trial::-webkit-scrollbar {
+  display: none;
 }
 .modal__form.trial > button[type='submit'] {
   margin-top: 0px;
@@ -105,9 +119,4 @@
     var(--color-accent)
   );
   color: var(--color-text-primary);
-}
-@media screen and (max-width: 900px) {
-  .modal {
-    display: block;
-  }
 }
