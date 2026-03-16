@@ -10,6 +10,7 @@ import { auth } from '@/lib/firebase.js';
 
 import { closeModal } from './modalController.js';
 import { getAuthErrorMessage } from '@/utilites/getAuthErrorMessage.js';
+import { validateLoginForm, validateRegisterForm } from './validation.js';
 
 document.addEventListener('submit', async e => {
   if (!(e.target instanceof HTMLFormElement)) return;
@@ -25,7 +26,12 @@ document.addEventListener('submit', async e => {
       const email = form.elements.email.value.trim();
       const password = form.elements.password.value;
       const name = form.elements.name?.value?.trim() ?? '';
-
+      const errors = validateRegisterForm({ name, email, password });
+      if (Object.keys(errors).length > 0) {
+        const firstError = Object.values(errors)[0];
+        showFormError(form, firstError);
+        return;
+      }
       const { user } = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -45,7 +51,12 @@ document.addEventListener('submit', async e => {
     if (form.id === 'login-form') {
       const email = form.elements.email.value.trim();
       const password = form.elements.password.value.trim();
-
+      const errors = validateLoginForm({ email, password });
+      if (Object.keys(errors).length > 0) {
+        const firstError = Object.values(errors)[0];
+        showFormError(form, firstError);
+        return;
+      }
       await signInWithEmailAndPassword(auth, email, password);
 
       form.reset();

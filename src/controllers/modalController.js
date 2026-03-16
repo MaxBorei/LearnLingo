@@ -117,6 +117,7 @@ document.addEventListener('submit', e => {
   e.preventDefault();
 
   const modal = e.target.closest('.modal');
+
   if (modal) closeModal(modal);
 
   Toastify({
