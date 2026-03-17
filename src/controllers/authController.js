@@ -101,7 +101,7 @@ function closeCurrentModalByForm(form) {
   closeModal(modal);
 }
 
-function showFormError(form, message) {
+export function showFormError(form, message) {
   clearFormError(form);
 
   const errorElem = document.createElement('div');

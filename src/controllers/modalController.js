@@ -2,6 +2,8 @@ import { getTeachersStore } from '../store/teachersStore.js';
 import { modalTrial } from '@/components/Modal-Trial/modalTrial.js';
 import Toastify from 'toastify-js';
 import { auth } from '@/lib/firebase.js';
+import { validateTrialForm } from './validation.js';
+import { showFormError } from './authController.js';
 
 document.addEventListener('click', e => {
   const openTrigger = e.target.closest('[data-modal]');
@@ -115,9 +117,18 @@ document.addEventListener('click', e => {
 document.addEventListener('submit', e => {
   if (!e.target.matches('#trial-form')) return;
   e.preventDefault();
-
+  const form = e.target;
+  if (!form.classList.contains('modal__form')) return;
   const modal = e.target.closest('.modal');
-
+  const email = form.elements.email.value.trim();
+  const name = form.elements.name.value.trim();
+  const phone = form.elements.phone.value.trim();
+  const errors = validateTrialForm({ name, email, phone });
+  if (Object.keys(errors).length > 0) {
+    const firstError = Object.values(errors)[0];
+    showFormError(form, firstError);
+    return;
+  }
   if (modal) closeModal(modal);
 
   Toastify({

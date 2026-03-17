@@ -6,7 +6,7 @@ function validatePassword(password) {
   return password.trim().length >= 8;
 }
 function validateName(name) {
-  const namePattern = /^[a-zA-Z\s'-]+$/;
+  const namePattern = /^(?=.*[a-zA-Z])[a-zA-Z\s'-]{3,}$/;
   if (!name.trim() || !namePattern.test(name.trim())) {
     return false;
   }
@@ -51,8 +51,28 @@ export function validateRegisterForm({ name, email, password }) {
   if (!name) {
     errors.name = 'Name is required';
   } else if (!validateName(name)) {
-    errors.name = 'Invalid name';
+    errors.name =
+      'Name must be at least 3 characters long and contain at least one letter';
   }
   return errors;
 }
-// validateTrialForm;
+export function validateTrialForm({ name, email, phone }) {
+  const errors = {};
+  if (!name) {
+    errors.name = 'Name is required';
+  } else if (!validateName(name)) {
+    errors.name =
+      'Name must be at least 3 characters long and contain at least one letter';
+  }
+  if (!email.trim()) {
+    errors.email = 'Email is required';
+  } else if (!validateEmail(email)) {
+    errors.email = 'Invalid email format';
+  }
+  if (!phone.trim()) {
+    errors.phone = 'Phone is required';
+  } else if (!validateUkrainePhone(phone)) {
+    errors.phone = 'Invalid phone format';
+  }
+  return errors;
+}
